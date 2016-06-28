@@ -89,6 +89,10 @@ module.exports = function(gulp, plugins) {
             .pipe(bs1.reload({stream:true}))
     })
 
+    gulp.task('ac_sass', ['dev_conn'], function(){
+        gulp.watch('src/sass/**', ['dev_sass'])
+    })
+
     gulp.task('default', ['dev_conn'], function(){
         gulp.watch('src/sass/**', ['dev_sass'])
         gulp.watch('src/image/**', bs1.reload)

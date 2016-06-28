@@ -1,0 +1,12 @@
+@mixin common-margin(){
+	margin-left: $marginLeft;
+	margin-right: $marginRight;
+}
+@mixin common-height(){
+	height: $commonHeight;
+	line-height: $commonHeight;
+}
+@mixin common-fontStyle(){
+	font-family: "黑体";
+	font-size:18px;
+}
