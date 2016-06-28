@@ -1,3 +1,83 @@
-body{
-	background-color: red;
+@import "_variable";
+@import "_mixin";
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.bind_wrapper{
+	width:100%;
+	@include common-fontStyle;	
+}
+
+.bind_wrapper>.country{
+	@include common-margin;
+	margin-top: 24px;
+	@include common-height;
+	border-bottom: $commomBorderBottom;
+}
+
+.bind_wrapper>.country>span{
+	display: inline-block;
+	@include common-height;
+	width:50%;
+	float:left;
+}
+
+.bind_wrapper>.country>span:nth-child(2){
+	text-align: right;
+}
+
+.bind_wrapper>.country:after{
+	content: "";
+	clear:both;
+}
+
+.bind_wrapper>.tel, .bind_wrapper>.valid_code{
+	@include common-margin;
+	@include common-height;
+	border-bottom: $commomBorderBottom;
+}
+.bind_wrapper>.valid_code{
+	position: relative;
+}
+
+.bind_wrapper>.tel>span, .bind_wrapper>.valid_code>span{
+	display: inline-block;
+	@include common-height;
+	width:20%;
+	text-align: right;
+}
+
+.bind_wrapper>.tel>input, .bind_wrapper>.valid_code>input{
+	height: $commonHeight - 2px;
+	line-height: $commonHeight - 2px;
+	border: 0;
+	margin-bottom: 1px;
+	font-size:18px;
+	margin-left:22px;
+}
+
+.bind_wrapper>.valid_code>p{
+	position: absolute;
+	top:1px;
+	right:0;
+	background-color: #19b08f;
+	color:#fff;
+	height: $commonHeight - 2px;
+	line-height: $commonHeight - 2px;
+	padding-left: $paddingLeft;
+	padding-right: $paddingRight;
+	border-radius: 5px;
+}
+
+.bind_wrapper>.bind{
+	margin: 36px 32px 0 32px;
+	background-color: #19b08f;
+	color:#fff;
+	font-size:22px;
+	@include common-height;
+	text-align: center;
+	border-radius: 5px;
 }
