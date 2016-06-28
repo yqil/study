@@ -1,0 +1,2 @@
+使用prome-sync搭建的脚手架项目，该项目用来reactjs+sass来编写登录demo
+
