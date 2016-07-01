@@ -11,6 +11,9 @@ public class RedisOperateObj {
 
 	public static void main(String[] args) {
 		// 连接 Redis 服务
+		Jedis jedis = new Jedis("10.10.2.99", 6379, 360000);
+		jedis.auth("123456");//设置密码
+		System.out.println("Connection to server sucessfully");
 		User user = new User();
 		user.setName("张三");
 		user.setAddr("XXXXXX");
