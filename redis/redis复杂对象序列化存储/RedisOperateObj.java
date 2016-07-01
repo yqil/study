@@ -11,31 +11,37 @@ public class RedisOperateObj {
 
 	public static void main(String[] args) {
 		// 连接 Redis 服务
-		Jedis jedis = new Jedis("127.0.0.1", 6379, 360000);
-		jedis.auth("123456");//设置密码
-		System.out.println("Connection to server sucessfully");
-		// 设置 redis 字符串数据
 		User user = new User();
-		user.setName("测试");
-		user.setAddr("湖北赤壁");
+		user.setName("张三");
+		user.setAddr("XXXXXX");
 		user.setSex("男");
-//		jedis.set("userObj", serialize(user));
-		//获取缓存数据
-		deserialize(jedis.get("userObj"));
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("aaa", "么么哒");
+		map.put("bbb", "2222");
+		//缓存map数据
+//		jedis.set("testobj", serialize(map));
+		//获取缓存中的map数据
+		/*Map<String, String> rs = (Map<String, String>)deserializeObj(jedis.get("testobj"));
+		System.out.println(rs.get("aaa"));*/
+		//缓存user数据
+//		jedis.set("testobj", serialize(user));
+		//获取缓存中的user信息
+		User user1 = (User)deserializeObj(jedis.get("testobj"));
+		System.out.println(user1.getName());
 		jedis.close();
 	}
 	/**
-	 * 序列化对象
-	 * @param user
+	 * 序列化对象信息
+	 * @param obj
 	 * @return
 	 */
-	public static String serialize(User user){
+	public static String serialize(Object obj){
 		byte[] bytes = null; 
 		String rs = null;
 		try{
 			ByteArrayOutputStream bo = new ByteArrayOutputStream();  
 	        ObjectOutputStream oo = new ObjectOutputStream(bo);  
-	        oo.writeObject(user);  
+	        oo.writeObject(obj);  
 	        bytes = bo.toByteArray(); 
 	        rs = Base64.encodeBase64String(bytes);
 		}catch(Exception e){
@@ -48,17 +54,16 @@ public class RedisOperateObj {
 	 * @param str
 	 * @return
 	 */
-	public static User deserialize(String str){
-		User user = null;
+	public static Object deserializeObj(String str){
+		Object obj = null;
 		try{
 			byte[] b = Base64.decodeBase64(str);
 			ByteArrayInputStream bi = new ByteArrayInputStream(b);  
-		    ObjectInputStream oi = new ObjectInputStream(bi);  
-		    user = (User) oi.readObject(); 
-		    System.out.println(user.getName());
+		    ObjectInputStream oi = new ObjectInputStream(bi);	  
+		    obj = oi.readObject(); 
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		return user;
+		return obj;
 	}
 }
