@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="1800 seconds" debug="true">
+	<!-- 定义日志文件输出目录 -->
+	<property name="USER_HOME" value="C:/tmp/logs/b2c" />
+	<!-- 定义日志文件的名称 -->
+	<property scope="context" name="FILE_NAME" value="uc" />
+	<!-- <timestamp key="byDay" datePattern="yyyy-MM-dd" /> -->
+	<timestamp key="byTime" datePattern="yyyyMMdd'T'HHmmss" />
+	
+	<!-- appender的配置表示打印到控制台 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<!-- 把日志添加到文件 -->
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 日志输出的文件目录及名称 -->
+		<file>${USER_HOME}/${FILE_NAME}-${byTime}.log</file>
+		<!-- 如果是 true，日志被追加到文件结尾，如果是 false，清空现存文件，默认是true。 -->
+		<append>true</append>
+		<!-- 如果是 true，日志会被安全的写入文件，即使其他的FileAppender也在向此文件做写入操作，效率低，默认是 false。 -->
+		<prudent>false</prudent>
+		<!-- 每天生成一个日志文件，保存90天的日志文件。 -->
+		<!-- <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">   
+	   		<fileNamePattern>logFile.%d{yyyy-MM-dd}.log</fileNamePattern>   
+	  		<maxHistory>90</maxHistory>    
+	    </rollingPolicy>   
+	   
+	    <encoder>   
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>   
+	    </encoder>  -->  
+	</appender>
+	
+	<!-- com.lsmy.b2c.uc为java中的包，<logger name="com.lsmy.b2c.uc" />将控制logback包下的所有类的日志的打印，
+	但是并没用设置打印级别，所以继承他的上级<root>的日志级别"DEBUG" -->   
+  	<!-- <logger name="lcom.lsmy.b2c.uc"/> -->  
+	<!-- 控制类的日志信息 -->
+	<!-- <logger name="com.lsmy.b2c.uc.biz.TestServiceImpl" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>  -->
+  
+	<!-- <root level="debug">将root的打印级别设置为“INFO”，指定了名字为“STDOUT”的appender。 -->
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
