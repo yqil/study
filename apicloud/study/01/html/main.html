@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui/css/aui.2.0.css" />
+	<style>
+		#con{
+			margin: 10px;
+			font-size: 24px; 
+		}
+		ul{
+			margin-bottom: 10px;
+		}
+		ul li{ 
+			margin: 5px 10px;
+			padding: 5px;
+			color: #000;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<body>
+    <label id="con">林氏木业</label>
+    <div class="aui-tab" id="tab">
+	    <div id="item1" class="aui-tab-item">沙发</div>
+	    <div  id="item2" class="aui-tab-item aui-active"><div></div>床</div>
+	    <div id="item3"  class="aui-tab-item">桌子</div>
+	    <div id="item4"  class="aui-tab-item">椅子</div>
+	</div>
+	<div class="aui-content aui-margin-b-15">
+	    <ul class="aui-list aui-list-in">
+	        <li class="aui-list-header">
+	            简单的列表布局
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">Item1</div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">Item2</div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">Item3</div>
+	            </div>
+	        </li>
+	    </ul>
+	</div>
+	<div class="aui-content aui-margin-b-15">
+	    <ul class="aui-list aui-list-in">
+	        <li class="aui-list-header">
+	            带有右侧箭头
+	        </li>
+	        <li class="aui-list-item aui-list-item-middle">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">Item1</div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">Item2</div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">Item3</div>
+	            </div>
+	        </li>
+	    </ul>
+	</div>
+	<div class="aui-content aui-margin-b-15">
+	    <ul class="aui-list aui-list-in">
+	        <li class="aui-list-header">
+	            带有其他元素的列表
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">text</div>
+	                <div class="aui-list-item-right">信息</div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">label</div>
+	                <div class="aui-list-item-right">
+	                    <div class="aui-label aui-label-info">标签</div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">dot</div>
+	                <div class="aui-list-item-right">
+	                    <div class="aui-dot" style="position:relative;top:0; right:0"></div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">badge</div>
+	                <div class="aui-list-item-right">
+	                    <div class="aui-badge" style="position:relative;top:0; left:0">88</div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">badge</div>
+	                <div class="aui-list-item-right">
+	                    <div class="aui-badge" style="position:relative;top:0; left:0"></div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">progress</div>
+	                <div class="aui-list-item-right">
+	                    <div class="aui-progress aui-progress aui-progress-xxs" style="width:5rem;">
+	                        <div class="aui-progress-bar" style="width: 60%;"></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner aui-list-item-arrow">
+	                <div class="aui-list-item-title">range</div>
+	                <div class="aui-list-item-right">
+	                    <div class="aui-range">
+	                        <input type="range" class="aui-range" value="30" max="100" min="1" step="1" id="range" />
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">switch</div>
+	                <div class="aui-list-item-right">
+	                    <input type="checkbox" class="aui-switch" checked>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">radio</div>
+	                <div class="aui-list-item-right">
+	                    <input type="radio" class="aui-radio" checked>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">checkbox</div>
+	                <div class="aui-list-item-right">
+	                    <input type="checkbox" class="aui-checkbox" checked>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-inner">
+	                <div class="aui-list-item-title">bar-btn</div>
+	                <div class="aui-list-item-right">
+	                    <div class="aui-bar aui-bar-btn aui-bar-btn-sm" style="width:60%;float:right">
+	                        <div class="aui-bar-btn-item">
+	                            <i class="aui-iconfont aui-icon-minus"></i>
+	                        </div>
+	                        <div class="aui-bar-btn-item">
+	                            <input type="number" class="aui-input aui-text-center" value="1" >
+	                        </div>
+	                        <div class="aui-bar-btn-item">
+	                            <i class="aui-iconfont aui-icon-plus"></i>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	    </ul>
+	</div>
+	<div class="aui-content aui-margin-b-15">
+	    <ul class="aui-list aui-list-in">
+	        <li class="aui-list-header">带有图标、底线缩进</li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-label-icon">
+	                <i class="aui-iconfont aui-icon-home"></i>
+	            </div>
+	            <div class="aui-list-item-inner">
+	                这是一个列表项
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-label-icon">
+	                <i class="aui-iconfont aui-icon-edit"></i>
+	            </div>
+	            <div class="aui-list-item-inner">
+	                这是一个列表项
+	            </div>
+	        </li>
+	        <li class="aui-list-item">
+	            <div class="aui-list-item-label-icon">
+	                <i class="aui-iconfont aui-icon-camera"></i>
+	            </div>
+	            <div class="aui-list-item-inner">
+	                这是一个列表项
+	            </div>
+	        </li>
+	    </ul>
+	</div>
+	<!--<div id='sys-info'></div>-->
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+		var tab = $api.byId('tab');
+		for(var i = 1; i < 5; i++){
+			(function(num){
+				var tabNum = $api.eq(tab, num);
+				$api.addEvt(tabNum, 'click', function(){
+					clearTabActive();
+					$api.addCls(tabNum,'aui-active');
+				});
+			})(i)
+		}
+		
+		var clearTabActive = function(){
+			$api.removeCls($api.eq(tab, 1), 'aui-active');
+			$api.removeCls($api.eq(tab, 2), 'aui-active');
+			$api.removeCls($api.eq(tab, 3), 'aui-active');
+			$api.removeCls($api.eq(tab, 4), 'aui-active');
+		};
+    };
+</script>
+</html>
