@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试get方法</title>
+	</head>
+	<body>
+		<p>get请求测试</p>
+		<form action="/getTest" method="GET">
+		First Name: <input type="text" name="first_name"><br/>
+		
+		Last Name: <input type="text" name="last_name">
+		<input type="submit" value="Submit">
+		</form>
+		<br />
+		<br />
+		<p>post请求测试</p>
+		<form action="/postTest" method="POST">
+		First Name: <input type="text" name="first_name">  <br>
+		
+		Last Name: <input type="text" name="last_name">
+		<input type="submit" value="Submit">
+		</form>
+		<br />
+		<br />
+		<h3>文件上传：</h3>
+		选择一个文件上传: <br />
+		<form action="/file_upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="image" size="50" />
+		<br />
+		<input type="submit" value="上传文件" />
+		</form>
+		<br />
+		<br />
+		<p>nodejs发送http get请求测试</p>
+		<form action="/sendHtppGetTest" method="GET">
+			<input type="submit" value="Submit">
+		</form>
+		<br />
+		<br />
+		<p>nodejs发送http post请求测试</p>
+		<form action="/sendHtppPostTest" method="GET">
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
