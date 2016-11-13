@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mine.study.example</groupId>
+	<artifactId>study-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+		<springVersion>3.2.2.RELEASE</springVersion>
+		<slf4j.version>1.6.2</slf4j.version>
+		<logback.version>1.0.6</logback.version>
+		<quartz.version>1.8.4</quartz.version>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- 配置部署的私服仓库 -->
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Releases</name>
+			<url>http://120.25.91.208:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Snapshots</name>
+			<url>http://120.25.91.208:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<modules>
+		<module>../whole-util</module>  
+		<module>study-example-common</module>
+		<module>study-example-api</module>
+		<module>study-example-web</module>
+		<module>study-example-job</module>
+	</modules>
+</project>

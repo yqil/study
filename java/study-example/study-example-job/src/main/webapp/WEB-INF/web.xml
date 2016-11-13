@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<servlet>
+		 <servlet-name>study-example-web</servlet-name>
+		 <servlet-class>
+		 	 org.springframework.web.servlet.DispatcherServlet
+		 </servlet-class>
+		<init-param> 
+			<param-name>contextConfigLocation</param-name> 
+			<param-value>classpath:spring-context.xml</param-value>
+		</init-param>
+	    <init-param>  
+	        <!-- 默认情况下，spring会初始化很多异常解析器，如果想让spring使用我们自定义的异常解析器，就需要加上这个参数。取消spring的默认设置 -->  
+	        <param-name>detectAllHandlerExceptionResolvers</param-name>   
+	        <param-value>false</param-value>  
+	    </init-param>  
+    
+		 <load-on-startup>1</load-on-startup>	 
+	</servlet>
+
+</web-app>
