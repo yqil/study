@@ -27,9 +27,11 @@ var urlencodedParser = bodyParser.urlencoded({
  * 设置静态文件路径
  */
 app.use(express.static('public'));
-
+/**
+ * 见官网：https://www.npmjs.com/package/multer
+ */
 app.use(multer({
-	dest: '/tmp/'
+	dest: 'tmp/'
 }).array('image'));
 /**
  * 进入getTest.html页面
@@ -88,7 +90,7 @@ app.post('/file_upload', function(req, res) {
 	});
 });
 
-app.get('/sendHtppGetTest', function(reqq, ress) {
+app.get('/sendHttpGetTest', function(reqq, ress) {
 	var options = {
 		hostname: '120.25.91.208',
 		port: 28010,
@@ -114,33 +116,21 @@ app.get('/sendHtppGetTest', function(reqq, ress) {
 	req.end();
 });
 
-app.get('/sendHtppPostTest', function(reqq, ress) {
+app.get('/sendHttpPostTest', function(reqq, ress) {
 	var data = {
-		defaultAddress: {
-			address: "导购测试222",
-			receiver_name: "导购测试222",
-			phone: null,
-			province: "110",
-			city: "11001",
-			area: "1100101",
-			street: "1100101001"
-		},
-		phone: "18617078889",
-		user_id: null,
-		nick_name: "导购测试999222",
-		level: null,
-		mmh: null
-	}; //这是需要提交的数据
+		phone:"666666"
+	};
 
 	var content = JSON.stringify(data);
 
 	var options = {
-		hostname: '120.25.91.208',
-		port: 28010,
-		path: '/dg/addOrUpdateUserInfo.do',
+		hostname: '127.0.0.1',
+		port: 8080,
+		path: '/study-example-web/e/saveUser.do',
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+			'Content-Type': 'application/json; charset=UTF-8'
+//			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 		}
 	};
 
@@ -159,7 +149,54 @@ app.get('/sendHtppPostTest', function(reqq, ress) {
 	});
 
 	// write data to request body  
-	req.write("params=" + content);
+	req.write(content);
+	req.end();
+});
+
+app.get('/sendHttpPostTest1', function(reqq, ress) {
+	var user = {
+		phone:"666666"
+	};
+	
+	var addr = {
+		province:"666666"
+	};
+	
+	var data = {
+		user : user,
+		addr : addr
+	};
+
+	var content = JSON.stringify(data);
+	console.log(content);
+	
+	var options = {
+		hostname: '127.0.0.1',
+		port: 8080,
+		path: '/study-example-web/e/saveUserAndAddr.do',
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json; charset=UTF-8'
+//			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+		}
+	};
+
+	var req = http.request(options, function(res) {
+		console.log('STATUS: ' + res.statusCode);
+		console.log('HEADERS: ' + JSON.stringify(res.headers));
+		res.setEncoding('utf8');
+		res.on('data', function(chunk) {
+			console.log('BODY: ' + chunk);
+			ress.end(chunk);
+		});
+	});
+
+	req.on('error', function(e) {
+		console.log('problem with request: ' + e.message);
+	});
+
+	// write data to request body  
+	req.write(content);
 	req.end();
 });
 
