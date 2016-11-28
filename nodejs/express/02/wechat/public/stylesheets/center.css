@@ -1,0 +1,79 @@
+body{
+	width:100%;
+	height:100%;
+	background-color: #EBEBEB;
+}
+.wx-center-header{
+	background-color: #19b08f;
+}
+.wx-center-photo-wrapper{
+	padding:12px 0 6px 0;
+}
+.wx-center-photo{
+	width:80px;
+	height:80px;
+}
+
+.wx-center-name{
+	padding-bottom: 12px;
+	font-size:16px;
+}
+
+.wx-center-user{
+	margin-top:15px;
+	height:44px;
+	background-color: #ffffff;
+}
+
+.wx-center-user-left{
+	padding-left:12px;
+	height:44px;
+	line-height:44px;
+}
+
+.wx-center-user-right{
+	background-color: #EBEBEB;
+	height:24px;
+	width:24px;
+	margin-right:12px;
+	margin-top:10px;
+}
+
+.wx-center-asset{
+	margin-top:15px;
+	height:44px;
+	line-height:44px;
+	background-color: #ffffff;
+}
+
+.wx-center-asset-p{
+	margin:0 12px 0 12px;
+	height:44px;
+	line-height:44px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.wx-center-asset-row{
+	padding-top:12px;
+	height:36px;
+	background-color: #ffffff;
+}
+
+
+.wx-center-asset-text{
+	height:24px;
+	line-height:24px;
+}
+
+.wx-center-asset-photo{
+	width:24px;
+	height:24px;
+}
+
+.wx-center-asset-row-text{
+	padding-top:6px;
+	height:42px;
+	background-color: #ffffff;
+	padding-top:12px;
+}
+

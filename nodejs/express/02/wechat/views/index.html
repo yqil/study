@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet">
+		<!-- 引入 Bootstrap -->
+		<link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/stylesheets/common.css" rel="stylesheet">
+		<link href="/stylesheets/index.css" rel="stylesheet">
+		<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+		<!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+		<title>用户绑定</title>
+	</head>
+
+	<body>
+		<div id="wxBind">
+			<div class="wx-row wx-country">
+				<div class="row wx-clear-margin">
+					<div class="col-xs-6 wx-clear-padding">
+						国家/地区
+					</div>
+					<div class="col-xs-6 text-right wx-clear-padding">
+						中国
+					</div>
+				</div>
+			</div>
+			<div class="wx-row">
+				<div class="row wx-clear-margin">
+					<div class="col-xs-2 text-right wx-clear-padding">
+						+86
+					</div>
+					<div class="col-xs-10 wx-clear-padding">
+						<input type="tel" v-model="phone" placeholder="请输入手机号" />
+					</div>
+				</div>
+			</div>
+	
+			<div class="wx-row">
+				<div class="row wx-clear-margin">
+					<div class="col-xs-2 text-right wx-clear-padding">
+						验证码
+					</div>
+					<div class="col-xs-6 wx-clear-padding">
+						<input type="number" v-model="validCode" placeholder="请输入短信验证码" />
+					</div>
+					<div class="col-xs-4 text-center wx-clear-padding">
+						<p class="wx-valid-code">短信验证码</p>
+					</div>
+				</div>
+			</div>
+	
+			<div class="wx-row">
+				<!--
+                	作者：445375039@qq.com
+                	时间：2016-11-25
+                	描述：为啥这里需要加个border，如果不加border，在安卓手机上密码的input会换行
+                -->
+				<div class="row wx-clear-margin">
+					<div class="col-xs-2 text-right wx-clear-padding">
+						密码
+					</div>
+					<div class="col-xs-10 wx-clear-padding">
+						<input type="password" v-model="pwd" placeholder="请输入密码"/>
+					</div>
+				</div>
+			</div>
+	
+			<div class="row wx-country">
+				<div class="col-xs-12 text-center wx-clear-padding">
+					<p class="wx-bind-phone" v-on:click="bindUser">绑定手机</p>
+				</div>
+			</div>
+		</div>
+		
+		<script src="http://www.zeptojs.cn/zepto.min.js"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="/javascripts/index.js"></script>
+	</body>
+
+</html>
