@@ -15,7 +15,10 @@ import com.alibaba.fastjson.JSON;
 import com.mine.study.common.model.UserAndAddrVO;
 import com.mine.study.common.model.autocode.TUser;
 import com.mine.study.common.service.UserService;
+import com.mine.study.common.util.ErrorCode;
 import com.mine.study.common.util.PropertiesUtil;
+import com.mine.study.whole.util.exception.SysException;
+import com.mine.study.whole.util.result.Result;
 
 @Controller
 @RequestMapping(value="/e", produces = "application/json;charset=UTF-8")
@@ -33,6 +36,16 @@ public class UserController
     @Autowired
     private UserService userService;
     
+    public Result getUserByOpenid(String appId){
+        try{
+            return new Result(ErrorCode.SUCCESS.code, ErrorCode.SUCCESS.msg, userService.queryThirdUser(appId), true);
+        }catch(SysException e){
+            return new Result(e.getCode(), e.getMessage(), null, false);
+        }catch(Exception e){
+            return new Result(ErrorCode.SYSEXCEPTION.code, ErrorCode.SYSEXCEPTION.msg, null, false);
+        }
+    }
+    
     @RequestMapping(value = "/listUser", method = RequestMethod.GET)
     @ResponseBody
     public List<TUser> listUser() throws Exception{
@@ -44,7 +57,7 @@ public class UserController
     
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
     @ResponseBody
-    public String saveUser(@RequestBody TUser user) throws Exception{
+    public Integer saveUser(@RequestBody TUser user) throws Exception{
         log.info("saveUser传入参数:{}", JSON.toJSONString(user));
         
         return userService.saveUser(user);
@@ -52,7 +65,7 @@ public class UserController
     
     @RequestMapping(value = "/saveUserAndAddr", method = RequestMethod.POST)
     @ResponseBody
-    public String saveUserAndAddr(@RequestBody UserAndAddrVO userAndAddr){
+    public Integer saveUserAndAddr(@RequestBody UserAndAddrVO userAndAddr){
         try{
             log.info("saveUserAndAddr传入参数:{}", JSON.toJSONString(userAndAddr));
             

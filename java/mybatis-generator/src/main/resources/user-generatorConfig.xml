@@ -20,17 +20,17 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
-		<javaModelGenerator targetPackage="com.mine.study.common.model.autocode" targetProject="C:\catalog\job\workspaces\dg\study-example\study-example-common\src\main\java">
+		<javaModelGenerator targetPackage="com.mine.study.common.model.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-common\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="mybatis.autocode" targetProject="C:\catalog\job\workspaces\dg\study-example\study-example-api\src\main\resources">
+		<sqlMapGenerator targetPackage="mybatis.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-api\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.mine.study.api.dao.autocode" targetProject="C:\catalog\job\workspaces\dg\study-example\study-example-api\src\main\java">
+			targetPackage="com.mine.study.api.dao.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-api\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 

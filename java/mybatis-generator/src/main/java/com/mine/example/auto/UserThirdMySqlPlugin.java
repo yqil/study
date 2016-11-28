@@ -17,18 +17,18 @@ import org.mybatis.generator.exception.XMLParserException;
 
 import com.mine.example.util.NameFormator;
 
-public class UserMySqlPlugin {
+public class UserThirdMySqlPlugin {
  
 	public static void main(String[] args) throws IOException, XMLParserException {
 		
-        String configfile = "D:/mine/github/study/java/mybatis-generator/src/main/resources/user-generatorConfig.xml";
+        String configfile = "D:/mine/github/study/java/mybatis-generator/src/main/resources/userThird-generatorConfig.xml";
         File configurationFile = new File(configfile);
         
         List<String> warnings = new ArrayList<String>();
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configurationFile);
         
-        Context context = config.getContext("user");
+        Context context = config.getContext("userThird");
         List<TableConfiguration> tables = context.getTableConfigurations();
         for(TableConfiguration table : tables){
         	System.out.println(table.getTableName());
@@ -81,7 +81,6 @@ public class UserMySqlPlugin {
 			e.printStackTrace();
 		}
          String[] arg = { "-configfile", configfile};  
-         System.out.println();
          ShellRunner.main(arg);  
 	}
 }

@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
 	
-	<context id="userAddress" targetRuntime="MyBatis3">
+	<context id="userThird" targetRuntime="MyBatis3">
 		<property name="mergeable" value="false"></property>
 		<!-- 生成的bean自动加上序列化 -->
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
@@ -34,7 +34,7 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
- 		<table schema="auto" tableName="t_user_address">
+ 		<table schema="auto" tableName="t_user_third">
  			<!-- 类中生成驼峰命名方式的属性，为true时，类中属性名称风格与数据库保持一致 -->
 			<property name="useActualColumnNames" value="false" />
 		</table> 

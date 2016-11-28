@@ -5,6 +5,7 @@ import java.util.List;
 import com.mine.study.common.model.UserAndAddrVO;
 import com.mine.study.common.model.autocode.TUser;
 import com.mine.study.common.model.autocode.TUserExample;
+import com.mine.study.whole.util.exception.SysException;
 
 public interface UserService
 {
@@ -54,4 +55,13 @@ public interface UserService
      * @lastModifier
      */
     public String saveUserAndAddress(UserAndAddrVO userAndAddr);
+    /**
+     * @Description 通过第三方id获取用户id
+     * @author bm
+     * @date 2016年11月26日 下午6:27:48
+     * @param appId
+     * @return
+     * @lastModifier
+     */
+    public String queryThirdUser(String appId) throws SysException;
 }
