@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet">
+		<!-- 引入 Bootstrap -->
+		<link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/stylesheets/common.css" rel="stylesheet">
+		<link href="/stylesheets/center.css" rel="stylesheet">
+		<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+		<!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+		<title>用户中心</title>
+	</head>
+
+	<body>
+		<div id="wxCenter">
+			<div class="wx-center-header">
+				<div class="text-center wx-center-photo-wrapper">
+					<img src="/images/Photo@2x.png" class="wx-center-photo"/>
+				</div>
+				<div class="text-center wx-center-name">
+					<p class="wx-clear-margin">李美丽</p>
+				</div>
+			</div>
+			
+			<div class="row wx-clear-margin wx-center-user">
+				<div class="col-xs-10 wx-clear-padding">
+					<p class="wx-center-user-left">个人信息</p>
+				</div>
+				<div class="col-xs-2 text-right wx-clear-padding">
+					<img src="/images/arrow-right@2x.png" class="wx-center-user-right"/>
+				</div>
+			</div>
+			
+			<div class="wx-center-asset">
+				<p class="wx-center-asset-p">资产</p>
+			</div>
+			
+			<div class="row wx-clear-margin wx-center-asset-photo-info">
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row">
+					<p class="wx-center-asset-text wx-clear-margin">88</p>
+				</div>
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row">
+					<img src="/images/mne-cards@2x.png" class="wx-center-asset-photo" />
+				</div>
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row">
+					<img src="/images/mine-gifts@2x.png" class="wx-center-asset-photo" />
+				</div>
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row">
+					<img src="/images/mine-award@2x.png" class="wx-center-asset-photo" />
+				</div>
+			</div>
+			
+			<div class="row wx-clear-margin">
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row-text">
+					<p class="wx-center-asset-text wx-clear-margin">积分</p>
+				</div>
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row-text">
+					<p class="wx-center-asset-text wx-clear-margin">卡券</p>
+				</div>
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row-text">
+					<p class="wx-center-asset-text wx-clear-margin">礼品</p>
+				</div>
+				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row-text">
+					<p class="wx-center-asset-text wx-clear-margin">奖品</p>
+				</div>
+			</div>
+		</div>
+		
+		<script src="http://www.zeptojs.cn/zepto.min.js"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="/javascripts/center.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+/*.wx-bind{
+	width:100%;
+}
+*/
+.wx-row{
+	margin: 0 12px 0 12px;
+	border-bottom: 1px solid #ccc;
+	height:44px;
+	line-height: 44px;
+	/*width: 100%;*/
+}
+.wx-country{
+	margin-top: 24px;
+}
+.wx-row input{
+	border: none;
+	margin-left:12px;
+	height:36px;
+	line-height:36px;
+	margin-top:4px;
+	outline:none;
+}
+
+.wx-valid-code{
+	height:40px;
+	line-height:40px;
+	background-color: #19b08f;
+	font-size:16px;
+	color: #ffffff;
+	/*text-align: center;*/
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    margin:2px 0 0 0;
+}
+
+.wx-bind-phone{
+	margin:0 32px 0 32px;
+	height:44px;
+	line-height: 44px;
+	background-color: #19b08f;
+	color: #ffffff;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    font-size:18px;
+}
