@@ -21,4 +21,15 @@ public class ListUtils
     public static <T> boolean isEmpty(List<T> list){
         return list == null || list.isEmpty();
     }
+    /**
+     * @Description 判断集合是否不为空
+     * @author bm
+     * @date 2016年11月13日 上午10:21:56
+     * @param list 
+     * @return
+     * @lastModifier
+     */
+    public static <T> boolean isNotEmpty(List<T> list){
+        return list != null && !list.isEmpty();
+    }
 }
