@@ -2,7 +2,7 @@ package com.mine.study.common.service;
 
 import java.util.List;
 
-import com.mine.study.common.model.UserAndAddrVO;
+import com.mine.study.common.model.BindUserVO;
 import com.mine.study.common.model.autocode.TUser;
 import com.mine.study.common.model.autocode.TUserExample;
 import com.mine.study.whole.util.exception.SysException;
@@ -46,16 +46,6 @@ public interface UserService
      */
     public String saveUser(TUser user);
     /**
-     * @Description 保存用户信息和地址,tx:纯粹为了测试aop事务
-     * @author bm
-     * @date 2016年11月13日 上午10:12:48
-     * @param user
-     * @param addr
-     * @return
-     * @lastModifier
-     */
-    public String saveUserAndAddress(UserAndAddrVO userAndAddr);
-    /**
      * @Description 通过第三方id获取用户id
      * @author bm
      * @date 2016年11月26日 下午6:27:48
@@ -63,5 +53,15 @@ public interface UserService
      * @return
      * @lastModifier
      */
-    public String queryThirdUser(String appId) throws SysException;
+    public String queryThirdUserId(String appId) throws SysException;
+    /**
+     * @Description 第三方绑定
+     * @author bm
+     * @date 2016年11月28日 下午3:57:13
+     * @param user
+     * @return
+     * @throws SysException
+     * @lastModifier
+     */
+    public String thirdBind(BindUserVO user) throws SysException;
 }

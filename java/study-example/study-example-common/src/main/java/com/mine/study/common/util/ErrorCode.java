@@ -28,4 +28,13 @@ public class ErrorCode
         
         String msg = "系统出现异常";
     }
+    
+    /**
+     * 系统异常
+     */
+    public interface USERALREADYBIND{
+        Integer code = -3;
+        
+        String msg = "用户已绑定";
+    }
 }

@@ -1,5 +1,6 @@
 package com.mine.study.api.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -11,12 +12,10 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.fastjson.JSON;
-import com.mine.study.api.dao.autocode.TUserAddressMapper;
 import com.mine.study.api.dao.autocode.TUserMapper;
 import com.mine.study.api.dao.autocode.TUserThirdMapper;
-import com.mine.study.common.model.UserAndAddrVO;
+import com.mine.study.common.model.BindUserVO;
 import com.mine.study.common.model.autocode.TUser;
-import com.mine.study.common.model.autocode.TUserAddress;
 import com.mine.study.common.model.autocode.TUserExample;
 import com.mine.study.common.model.autocode.TUserThird;
 import com.mine.study.common.model.autocode.TUserThirdExample;
@@ -25,6 +24,7 @@ import com.mine.study.common.util.ErrorCode;
 import com.mine.study.common.util.PropertiesUtil;
 import com.mine.study.whole.util.collections.ListUtils;
 import com.mine.study.whole.util.exception.SysException;
+import com.mine.study.whole.util.safe.Md5Util;
 import com.mine.study.whole.util.uuid.UuidUtils;
 
 @Service("userService")
@@ -34,9 +34,6 @@ public class UserServiceImpl implements UserService
     
     @Autowired
     private TUserMapper userMapper;
-    
-    @Autowired
-    private TUserAddressMapper  userAddressMapper;
     
     @Autowired
     private TUserThirdMapper userThirdMapper;
@@ -90,39 +87,7 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    @Transactional(propagation=Propagation.REQUIRED)
-    public String saveUserAndAddress(UserAndAddrVO userAndAddr)
-    {
-        log.info("传入参数:{}", JSON.toJSONString(userAndAddr));
-        
-        log.info("保存用户信息");
-        TUser user = userAndAddr.getUser();
-        String userId = user.getUserId();
-        if(StringUtils.isEmpty(userId)){
-            userId = UuidUtils.get32Uuid();
-            user.setUserId(userId);
-            userMapper.insert(user);
-        }else {
-            userMapper.updateByPrimaryKey(user);
-        }
-        
-        log.info("保存用户地址信息");
-        TUserAddress addr = userAndAddr.getAddr();
-        addr.setUserId(userId);
-        String addrId = addr.getAddrId();
-        if(StringUtils.isEmpty(addrId)){
-            addrId = UuidUtils.get32Uuid();
-            addr.setAddrId(addrId);
-            userAddressMapper.insert(addr);
-        }else {
-            userAddressMapper.updateByPrimaryKey(addr);
-        }
-        
-        return userId;
-    }
-
-    @Override
-    public String queryThirdUser(String appId) throws SysException
+    public String queryThirdUserId(String appId) throws SysException
     {
         log.info("传入参数:{}", appId);
         
@@ -136,7 +101,43 @@ public class UserServiceImpl implements UserService
         if(ListUtils.isEmpty(list)){
             return null;
         }
-        return list.get(0).getId();
+        return list.get(0).getUserId();
+    }
+
+    @Override
+    @Transactional(propagation=Propagation.REQUIRED)
+    public String thirdBind(BindUserVO user) throws SysException
+    {
+        log.info("传入参数:{}", JSON.toJSONString(user));
+        
+        TUserThirdExample example = new TUserThirdExample();
+        example.createCriteria().andAppIdEqualTo(user.getAppId());
+        List<TUserThird> list = userThirdMapper.selectByExample(example);
+        if(ListUtils.isNotEmpty(list)){
+            throw new SysException(ErrorCode.USERALREADYBIND.code, ErrorCode.USERALREADYBIND.msg);
+        }
+        
+        TUserExample userExample = new TUserExample();
+        userExample.createCriteria().andPhoneEqualTo(user.getPhone());
+        List<TUser> users = userMapper.selectByExample(userExample);
+        String userId = null;
+        if(ListUtils.isEmpty(users)){
+            userId = UuidUtils.get32Uuid();
+            TUser u = new TUser();
+            u.setUserId(userId);
+            u.setPhone(user.getPhone());
+            u.setUserPwd(Md5Util.md5(user.getPwd(), null));
+            u.setCreateTime(new Date());
+            userMapper.insert(u);
+        }
+        
+        TUserThird userThird = new TUserThird();
+        userThird.setUserId(userId);
+        userThird.setAppId(user.getAppId());
+        userThird.setType((byte) user.getType().intValue());
+        userThird.setId(UuidUtils.get32Uuid());
+        userThirdMapper.insert(userThird);
+        return userId;
     }
 
     
