@@ -1,6 +1,6 @@
 ! function() {
 	var vm = new Vue({
-		el: "body",
+		el: "#wxBind",
 		data: {
 			phone: null,
 			validCode: null,

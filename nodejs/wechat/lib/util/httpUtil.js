@@ -9,7 +9,10 @@ var get = function(hostName, port, url){
 			hostname: hostName,
 			port: port,
 			path: url,
-			method: 'GET'
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json; charset=UTF-8'
+			}
 		};
 	
 		var req = http.request(options, function(res) {
@@ -22,7 +25,7 @@ var get = function(hostName, port, url){
 		req.on('error', function(e) {
 			reject(e);
 		});
-	
+		
 		req.end();
 	});
 };
@@ -35,7 +38,8 @@ var post = function(hostName, port, path, data){
 			path: path,
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json; charset=UTF-8'
+				'Content-Type': 'application/json; charset=UTF-8',
+				"dataType": 'json',
 			}
 		};
 		var req = http.request(options, function(res) {

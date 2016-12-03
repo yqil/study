@@ -1,21 +1,22 @@
 ! function() {
-	/*var vm = new Vue({
-		el: "body",
-		ready: function(){
-			console.log("aaaa");
-			this.getUserById();
-		},
+	var vm = new Vue({
+		el: "#wxCenter",
 		data: {
 			photo: null,
 			nickName: null,
 			integral: 0
 		},
+		mounted: function(){
+//			this.getUserById();
+			var that = this;
+			$.getJSON('/center', null, function(data, status, xhr){
+				that.nickName = data.content.nickName;
+			});
+		},
 		methods: {
-			getUserById: function(){
-				$.getJSON('/center', null, function(data, status, xhr){
-					console.log(data);
-				});
+			accessPerson: function(){
+				window.location.href="/person";
 			}
 		}
-	});*/
+	});
 }();

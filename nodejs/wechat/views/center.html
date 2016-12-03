@@ -24,7 +24,7 @@
 					<img src="/images/Photo@2x.png" class="wx-center-photo"/>
 				</div>
 				<div class="text-center wx-center-name">
-					<p class="wx-clear-margin">李美丽</p>
+					<p class="wx-clear-margin">{{ nickName }}</p>
 				</div>
 			</div>
 			
@@ -33,7 +33,7 @@
 					<p class="wx-center-user-left">个人信息</p>
 				</div>
 				<div class="col-xs-2 text-right wx-clear-padding">
-					<img src="/images/arrow-right@2x.png" class="wx-center-user-right"/>
+					<img src="/images/arrow-right@2x.png" class="wx-center-user-right" v-on:click="accessPerson"/>
 				</div>
 			</div>
 			
@@ -43,7 +43,7 @@
 			
 			<div class="row wx-clear-margin wx-center-asset-photo-info">
 				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row">
-					<p class="wx-center-asset-text wx-clear-margin">88</p>
+					<p class="wx-center-asset-text wx-clear-margin">{{ integral }}</p>
 				</div>
 				<div class="col-xs-3 text-center wx-clear-padding wx-center-asset-row">
 					<img src="/images/mne-cards@2x.png" class="wx-center-asset-photo" />
