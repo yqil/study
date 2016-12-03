@@ -1,0 +1,58 @@
+body{
+	background-color: #ebebeb;
+	font-size: 18px;
+}
+
+.wx-person-top{
+	margin-top: 15px;
+}
+
+.wx-person-row{
+	background-color: #ffffff;
+}
+
+.wx-person-photo{
+	height:84px;
+	line-height: 84px;
+	border-bottom: 1px solid #ebebeb;
+	margin: 0 12px 0 12px;
+}
+
+.wx-person-photo-img{
+	height:60px;
+	width:60px;
+}
+
+.wx-person-nickname{
+	height:48px;
+	line-height: 48px;
+	margin: 0 12px 0 12px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.wx-person-nickname-info>span{
+	font-size:14px;
+	padding-right:10px;
+}
+
+.wx-person-nickname-info>img{
+	height:24px;
+	width:24px;
+}
+
+.wx-person-linkuser{
+	border: none;
+}
+
+.wx-person-linkuser>div:nth-child(2){
+	font-size:14px;
+}
+
+.wx-person-addr{
+	border: none;
+	color: #868686;
+	margin-left:12px;
+	height:36px;
+	font-size:14px;
+}
+

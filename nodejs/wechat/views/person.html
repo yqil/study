@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--
+        	作者：445375039@qq.com
+        	时间：2016-12-03
+        	描述：解决iphone上数字点击会弹出是否拨打电话提示的问题
+        -->
+		<meta name="format-detection" content="telephone=no" />
 		<link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet">
 		<!-- 引入 Bootstrap -->
 		<link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/stylesheets/common.css" rel="stylesheet">
-		<link href="/stylesheets/center.css" rel="stylesheet">
+		<link href="/stylesheets/person.css" rel="stylesheet">
 		<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
 		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
 		<!--[if lt IE 9]>
@@ -17,8 +23,84 @@
 		<title>个人信息</title>
 	</head>
 	<body>
-		<div id="wxPerson">
-			
+		<div id="wxPerson" class="wx-person-top">
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-photo">
+					<div class="col-xs-3 wx-clear-padding">
+						头像
+					</div>
+					<div class="col-xs-9 text-right wx-clear-padding">
+						<img src="/images/Photo@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
+					</div>
+				</div>
+			</div>
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-nickname">
+					<div class="col-xs-3 wx-clear-padding">
+						昵称
+					</div>
+					<div class="col-xs-9 text-right wx-clear-padding wx-person-nickname-info">
+						<span>测试666</span>
+						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
+					</div>
+				</div>
+			</div>
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-nickname">
+					<div class="col-xs-3 wx-clear-padding">
+						木木号
+					</div>
+					<div class="col-xs-9 text-right wx-clear-padding wx-person-nickname-info">
+						<span>木木君</span>
+						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
+					</div>
+				</div>
+			</div>
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-nickname">
+					<div class="col-xs-3 wx-clear-padding">
+						手机号
+					</div>
+					<div class="col-xs-9 text-right wx-clear-padding wx-person-nickname-info">
+						<span>66666666666</span>
+						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
+					</div>
+				</div>
+			</div>
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-top wx-person-nickname">
+					<div class="col-xs-3 wx-clear-padding">
+						地址
+					</div>
+					<div class="col-xs-9 text-right wx-clear-padding wx-person-nickname-info">
+						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
+					</div>
+				</div>
+			</div>
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-nickname wx-person-linkuser">
+					<div class="col-xs-3 wx-clear-padding">
+						王小二
+					</div>
+					<div class="col-xs-9 text-right wx-clear-padding">
+						<span>66666666666</span>
+					</div>
+				</div>
+			</div>
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-addr">
+					<div class="col-xs-12 wx-clear-padding">
+						广东省&nbsp;&nbsp;佛山市&nbsp;&nbsp;南海区
+					</div>
+				</div>
+			</div>
+			<div class="wx-person-row">
+				<div class="row wx-clear-margin wx-person-addr">
+					<div class="col-xs-12 wx-clear-padding">
+						九江镇沙头工业园林氏木业
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
