@@ -82,7 +82,7 @@ public class UserController
         }
     }
     
-    @RequestMapping(value = "/queryUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/queryUser", method = RequestMethod.POST)
     @ResponseBody
     public Result queryUser(@RequestBody TUser user){
         try{

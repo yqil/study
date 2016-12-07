@@ -75,6 +75,7 @@ public class UserServiceImpl implements UserService
         if(ListUtils.isEmpty(list)){
             return null;
         }
+        list.get(0).setUserPwd(null);
         return list.get(0);
     }
 
