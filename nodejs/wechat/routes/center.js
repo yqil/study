@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 		var data = {
 			userId: userId
 		};
-		var url = "/study-example-web/e/queryUser.do";
+		var url = "/e/queryUser.do";
 		httpUtil.post("127.0.0.1", "8080", url, JSON.stringify(data)).then(function(data){
 			data = JSON.parse(data);
 			if(data && data.status && data.content){

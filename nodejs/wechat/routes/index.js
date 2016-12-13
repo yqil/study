@@ -5,7 +5,7 @@ var httpUtil = require('../lib/util/httpUtil');
 
 var dealUserInfo = function(req, openid){
 	return new Promise(function(resolver, reject) {
-		var url = "/study-example-web/e/getUserIdByOpenid.do?appId="+openid;
+		var url = "/e/getUserIdByOpenid.do?appId="+openid;
 		httpUtil.get("127.0.0.1", "8080", url).then(function(data){
 			req.session.openid = openid;
 			resolver(data);
