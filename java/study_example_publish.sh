@@ -11,6 +11,6 @@ sh /data/webservers/tomcat-8080-study-example/bin/catalina.sh stop --force
 
 rm -rf /data/webservers/tomcat-8080-study-example/webapps/*
 
-cp -r /data/github/study/java/study-example/study-example-web/target/b2c-obs-web.war /data/webservers/tomcat-8080-study-example/webapps/ROOT.war
+cp -r /data/github/study/java/study-example/study-example-web/target/study-example-web.war /data/webservers/tomcat-8080-study-example/webapps/ROOT.war
 sh /data/webservers/tomcat-8080-study-example/bin/catalina.sh start
 tail -f /data/webservers/tomcat-8080-study-example/logs/catalina.out
