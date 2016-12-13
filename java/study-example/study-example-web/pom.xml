@@ -31,7 +31,7 @@
 			<!-- 本地环境 -->
 			<id>development</id>
 			<properties>
-				<jdbc.url>127.0.0.1:3306/study</jdbc.url>
+				<jdbc.url>127.0.0.1:3306/study_dev</jdbc.url>
 				<jdbc.user>yql</jdbc.user>
 				<jdbc.passwd>yql</jdbc.passwd>
 				<jdbc.initialSize>1</jdbc.initialSize>
