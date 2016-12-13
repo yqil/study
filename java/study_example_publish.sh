@@ -2,8 +2,8 @@
 source /etc/profile
 
 cd /data/github/study/java
-git checkout -f .
-git pull .
+git checkout -f
+git pull
 
 cd /data/github/study/java/study-example
 mvn clean install -Dmaven.test.skip=true -Pdevelopment
