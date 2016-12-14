@@ -28,7 +28,7 @@
                     window.location.href="/person/editMmh?mmh="+this.mmh;
                 }else {
                     this.dialogMsg = "木木号只能修改一次";
-                    that.myDialog.showDialog();
+                    this.myDialog.showDialog();
                 }
                 
             },
