@@ -22,6 +22,7 @@
                         that.nickName = data.content.nickName;
                         that.mmh = data.content.mmh;
                         that.phone = data.content.phone;
+                        window.location.href="/person/index";
                     }else {
                         that.myDialog.showDialog();
                     }
