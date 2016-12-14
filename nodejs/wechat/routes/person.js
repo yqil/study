@@ -55,7 +55,11 @@ router.get('/:id', function(req, res, next) {
     }else if(id == "queryUser"){
         queryUser(req, res);
     }else if(id == "editNickName"){
-        res.render('editNickName', { msg: "修改昵称" });
+        res.render('editNickName', { msg: "修改木木号" });
+    }else if(id == "editMmh"){
+        res.render('editMmh', { msg: "修改昵称" });
+    }else if(id == "editPhone"){
+        res.render('editPhone', { msg: "修改手机号码" });
     }else if(id == "saveUser"){
         saveUser(req, res);
     }
