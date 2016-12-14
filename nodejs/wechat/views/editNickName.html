@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet" />
+        <!-- 引入 Bootstrap -->
+        <link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/stylesheets/common.css" rel="stylesheet" />
+        <link href="/stylesheets/editPersonNickName.css" rel="stylesheet" />
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+        <title>修改昵称</title>
+    </head>
+
+    <body>
+        <div id="wxEditPersonNickName">
+            <div class="wx-nickName-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-2 wx-clear-padding wx-nickName-text">
+                        昵称
+                    </div>
+                    <div class="col-xs-10 text-right wx-clear-padding">
+                        <input type="text" v-model="nickName" placeholder="请输入昵称" class="wx-nickName-input">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12 text-center wx-clear-padding">
+                    <p class="wx-nickName-save" v-on:click="save">保存</p>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <script src="http://www.zeptojs.cn/zepto.min.js"></script>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="/javascripts/util.js"></script>
+        <script src="/javascripts/editNickName.js"></script>
+
+        
+    </body>
+
+</html>
