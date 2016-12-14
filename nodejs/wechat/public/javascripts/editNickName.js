@@ -18,10 +18,7 @@
                     }
                 };
                 $.getJSON('/person/saveUser', data, function(data, status, xhr){
-                    if(data && data.status){
-                        that.nickName = data.content.nickName;
-                        that.mmh = data.content.mmh;
-                        that.phone = data.content.phone;
+                    if(data){
                         window.location.href="/person/index";
                     }else {
                         that.myDialog.showDialog();
