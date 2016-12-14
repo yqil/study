@@ -15,7 +15,7 @@
 		},
 		methods: {
 			accessPerson: function(){
-				window.location.href="/person";
+				window.location.href="/person/index";
 			}
 		}
 	});
