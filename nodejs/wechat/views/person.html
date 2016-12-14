@@ -13,6 +13,7 @@
 		<!-- 引入 Bootstrap -->
 		<link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/stylesheets/common.css" rel="stylesheet">
+		<link href="/plugin/my-dialog/my_dialog.css" rel="stylesheet" />
 		<link href="/stylesheets/person.css" rel="stylesheet">
 		<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
 		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -40,8 +41,8 @@
 						昵称
 					</div>
 					<div class="col-xs-9 text-right wx-clear-padding wx-person-nickname-info">
-						<span>测试666</span>
-						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
+						<span>{{ nickName }}</span>
+						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示" v-on:click="editNickName"/>
 					</div>
 				</div>
 			</div>
@@ -51,7 +52,7 @@
 						木木号
 					</div>
 					<div class="col-xs-9 text-right wx-clear-padding wx-person-nickname-info">
-						<span>木木君</span>
+						<span>{{ mmh }}</span>
 						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
 					</div>
 				</div>
@@ -62,7 +63,7 @@
 						手机号
 					</div>
 					<div class="col-xs-9 text-right wx-clear-padding wx-person-nickname-info">
-						<span>66666666666</span>
+						<span>{{ phone }}</span>
 						<img src="/images/pen@2x.png" class="wx-person-photo-img" alt="头像无法显示"/>
 					</div>
 				</div>
@@ -101,6 +102,12 @@
 					</div>
 				</div>
 			</div>
+			<my-dialog :message="dialogMsg"></my-dialog>
 		</div>
+
+		<script src="http://www.zeptojs.cn/zepto.min.js"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="/plugin/my-dialog/my_dialog.js"></script>
+		<script src="/javascripts/person.js"></script>
 	</body>
 </html>
