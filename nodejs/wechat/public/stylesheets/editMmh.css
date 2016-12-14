@@ -1,0 +1,39 @@
+body{
+    background-color: #ebebeb;
+    font-size: 18px;
+}
+
+/*.wx-nickName-top{
+    margin-top: 15px;
+}*/
+
+.wx-nickName-row{
+    margin-top: 15px;
+    background-color: #ffffff;
+    height: 44px;
+    line-height: 44px;
+}
+
+.wx-nickName-text{
+    text-align: right;
+}
+
+.wx-nickName-input{
+    height:36px;
+    line-height:36px;
+    margin-top:4px;
+    outline:none;
+    border: none;
+}
+
+.wx-nickName-save{
+    margin:12px 32px 0 32px;
+    height:44px;
+    line-height: 44px;
+    background-color: #19b08f;
+    color: #ffffff;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    font-size:18px;
+}
