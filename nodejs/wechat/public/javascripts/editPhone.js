@@ -1,7 +1,7 @@
 
 ! function() {
     var vm = new Vue({
-        el: "#wxEditMmh",
+        el: "#wxEditPhone",
         data: {
             phone: null,
             dialogMsg: "服务器开小差了，请稍后尝试~"
