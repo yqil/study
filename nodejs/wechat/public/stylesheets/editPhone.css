@@ -3,22 +3,18 @@ body{
     font-size: 18px;
 }
 
-/*.wx-nickName-top{
-    margin-top: 15px;
-}*/
-
-.wx-nickName-row{
+.wx-phone-row{
     margin-top: 15px;
     background-color: #ffffff;
     height: 44px;
     line-height: 44px;
 }
 
-.wx-nickName-text{
+.wx-phone-text{
     text-align: right;
 }
 
-.wx-nickName-input{
+.wx-phone-input{
     height:36px;
     line-height:36px;
     margin-top:4px;
@@ -26,7 +22,7 @@ body{
     border: none;
 }
 
-.wx-nickName-save{
+.wx-phone-save{
     margin:12px 32px 0 32px;
     height:44px;
     line-height: 44px;
