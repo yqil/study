@@ -1,0 +1,51 @@
+.my-dialog{
+    display: none;
+}
+
+.my-dialog>div:first-child{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    z-index: 8888;
+    height:100%;
+    width:100%;
+}
+
+.my-dialog>div:nth-child(2){
+    position: fixed;
+    z-index: 99999;
+    width: 70%;
+    left: 15%;
+    text-align: center;
+    z-index: 9999;
+    background-color: #ffffff;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+.my-dialog>div:nth-child(2)>p:nth-child(1){
+    margin: 15px 0 10px 0;
+    font-size: 22px;
+}
+.my-dialog>div:nth-child(2)>p:nth-child(2){
+    margin: 0;
+    font-size:14px;
+    border-bottom: 1px solid #ebebeb;
+    padding:0 12px 10px 12px;
+    
+}
+.my-dialog>div:nth-child(2)>p:nth-child(3){
+    height:44px;
+    line-height: 44px;
+    font-size:22px;
+    margin:0;
+    color: #50BFA7;
+    cursor: pointer;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
