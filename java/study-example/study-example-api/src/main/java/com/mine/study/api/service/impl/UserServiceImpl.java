@@ -61,7 +61,9 @@ public class UserServiceImpl implements UserService
             user.setUserId(userId);
             userMapper.insert(user);
         }else {
-            userMapper.updateByPrimaryKey(user);
+            TUserExample example = new TUserExample();
+            example.createCriteria().andUserIdEqualTo(userId);
+            userMapper.updateByExampleSelective(user, example);
         }
         return userId;
     }
