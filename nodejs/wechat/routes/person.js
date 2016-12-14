@@ -54,8 +54,8 @@ router.get('/:id', function(req, res, next) {
         res.render('person', { msg: "进入个人信息界面" });
     }else if(id == "queryUser"){
         queryUser(req, res);
-    }else if(id == "editPersonNickName"){
-        res.render('editPersonNickName', { msg: "修改昵称" });
+    }else if(id == "editNickName"){
+        res.render('editNickName', { msg: "修改昵称" });
     }else if(id == "saveUser"){
         saveUser(req, res);
     }
