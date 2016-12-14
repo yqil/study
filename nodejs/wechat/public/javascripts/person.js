@@ -21,7 +21,19 @@
         },
         methods: {
             editNickName: function(){
-                window.location.href="/person/editPersonNickName?nickName="+this.nickName;
+                window.location.href="/person/editNickName?nickName="+this.nickName;
+            },
+            editMmh: function(){
+                if(!this.mmh){
+                    window.location.href="/person/editMmh?mmh="+this.mmh;
+                }else {
+                    this.dialogMsg = "木木号只能修改一次";
+                    that.myDialog.showDialog();
+                }
+                
+            },
+            editPhone: function(){
+                window.location.href="/person/editPhone?phone="+this.phone;
             }
         }
     });
