@@ -4,26 +4,33 @@
         el: "#wxEditPhone",
         data: {
             phone: null,
+            validCode: null,
             dialogMsg: "服务器开小差了，请稍后尝试~"
         },
         mounted: function(){
             this.phone = this.getQueryString("phone");
         },
         methods: {
-
             save: function(){
-                var data = {
-                    data: {
-                        phone: this.phone
-                    }
-                };
-                $.getJSON('/person/saveUser', data, function(data, status, xhr){
-                    if(data){
-                        window.location.href="/person/index";
-                    }else {
-                        that.myDialog.showDialog();
-                    }
-                });
+                var that = this;
+                if(this.validCode == "888888"){
+                    var data = {
+                        data: {
+                            phone: this.phone
+                        }
+                    };
+                    $.getJSON('/person/saveUser', data, function(data, status, xhr){
+                        if(data){
+                            window.location.href="/person/index";
+                        }else {
+                            that.myDialog.showDialog();
+                        }
+                    });
+                }else {
+                    this.dialogMsg = "验证码错误";
+                    this.myDialog.showDialog();
+                }
+                
             }
         }
     });

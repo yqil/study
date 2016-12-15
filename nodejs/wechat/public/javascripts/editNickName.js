@@ -10,8 +10,8 @@
             this.nickName = this.getQueryString("nickName");
         },
         methods: {
-
             save: function(){
+                var that = this;
                 var data = {
                     data: {
                         nickName: this.nickName

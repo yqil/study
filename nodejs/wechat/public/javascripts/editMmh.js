@@ -5,13 +5,10 @@
         data: {
             mmh: null,
             dialogMsg: "服务器开小差了，请稍后尝试~"
-        },
-        mounted: function(){
-            this.mmh = this.getQueryString("mmh");
-        },
+        }
         methods: {
-
             save: function(){
+                var that = this;
                 var data = {
                     data: {
                         mmh: this.mmh

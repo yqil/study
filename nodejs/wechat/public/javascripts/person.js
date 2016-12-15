@@ -25,7 +25,7 @@
             },
             editMmh: function(){
                 if(!this.mmh){
-                    window.location.href="/person/editMmh?mmh="+this.mmh;
+                    window.location.href="/person/editMmh";
                 }else {
                     this.dialogMsg = "木木号只能修改一次";
                     this.myDialog.showDialog();
