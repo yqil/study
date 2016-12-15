@@ -20,6 +20,22 @@ body{
     margin-top:4px;
     outline:none;
     border: none;
+    font-size:16px;
+    margin-left:12px;
+}
+
+.wx-phone-valid{
+    display: inline-block;
+    height:40px;
+    line-height:40px;
+    background-color: #19b08f;
+    font-size:16px;
+    color: #ffffff;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    margin:2px 12px 0 0;
+    padding: 0 8px 0 8px;
 }
 
 .wx-phone-save{
