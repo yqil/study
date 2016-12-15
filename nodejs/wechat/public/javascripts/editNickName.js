@@ -4,7 +4,8 @@
         el: "#wxEditPersonNickName",
         data: {
             nickName: null,
-            dialogMsg: "服务器开小差了，请稍后尝试~"
+            dialogMsg: "服务器开小差了，请稍后尝试~",
+            loaddingMsg: "保存中，请稍后~"
         },
         mounted: function(){
             this.nickName = this.getQueryString("nickName");
@@ -17,6 +18,7 @@
                         nickName: this.nickName
                     }
                 };
+                this.myLoadding.showLoadding();
                 $.getJSON('/person/saveUser', data, function(data, status, xhr){
                     if(data){
                         window.location.href="/person/index";
