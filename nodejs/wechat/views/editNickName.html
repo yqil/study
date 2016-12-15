@@ -7,6 +7,7 @@
         <!-- 引入 Bootstrap -->
         <link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/stylesheets/common.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/plugin/my-dialog/my_dialog.css">
         <link href="/stylesheets/editNickName.css" rel="stylesheet" />
         <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
         <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -30,17 +31,21 @@
                 </div>
             </div>
             
-            <div class="row">
-                <div class="col-xs-12 text-center wx-clear-padding">
-                    <p class="wx-nickName-save" v-on:click="save">保存</p>
+            <div class="wx-nickName-row wx-nickName-save">
+                <div class="col-xs-12 wx-clear-padding">
+                    <p v-on:click="save">保存</p>
                 </div>
             </div>
+
+            <my-dialog :message="dialogMsg"></my-dialog>
+            <my-loadding :message="loaddingMsg"></my-loadding>
         </div>
 
         
         
         <script src="http://www.zeptojs.cn/zepto.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
         <script src="/javascripts/util.js"></script>
         <script src="/javascripts/editNickName.js"></script>
 

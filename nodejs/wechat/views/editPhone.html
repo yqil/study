@@ -7,6 +7,7 @@
         <!-- 引入 Bootstrap -->
         <link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/stylesheets/common.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/plugin/my-dialog/my_dialog.css">
         <link href="/stylesheets/editPhone.css" rel="stylesheet" />
         <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
         <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -14,33 +15,39 @@
          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
-        <title>修改昵称</title>
+        <title>修改手机号码</title>
     </head>
 
     <body>
         <div id="wxEditPhone">
             <div class="wx-phone-row">
                 <div class="row wx-clear-margin">
-                    <div class="col-xs-2 wx-clear-padding wx-phone-text">
+                    <div class="col-xs-3 wx-clear-padding wx-phone-text">
                         手机号码
                     </div>
-                    <div class="col-xs-10 text-right wx-clear-padding">
+                    <div class="col-xs-4 wx-clear-padding">
                         <input type="text" v-model="phone" placeholder="请输入手机号码" class="wx-phone-input">
+                    </div>
+                    <div class="col-xs-5 wx-clear-padding">
+                        <span>发送验证码</span>
                     </div>
                 </div>
             </div>
             
-            <div class="row">
+            <div class="wx-phone-row wx-phone-save">
                 <div class="col-xs-12 text-center wx-clear-padding">
-                    <p class="wx-phone-save" v-on:click="save">保存</p>
+                    <p v-on:click="save">保存</p>
                 </div>
             </div>
+
+            <my-dialog :message="dialogMsg"></my-dialog>
         </div>
 
         
         
         <script src="http://www.zeptojs.cn/zepto.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
         <script src="/javascripts/util.js"></script>
         <script src="/javascripts/editPhone.js"></script>
 
