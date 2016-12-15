@@ -1,0 +1,41 @@
+body{
+    background-color: #ebebeb;
+    font-size: 18px;
+}
+
+.wx-addr-row{
+    margin-top: 15px;
+    background-color: #ffffff;
+    height: 44px;
+    line-height: 44px;
+}
+
+.wx-addr-text{
+    text-align: right;
+}
+
+.wx-addr-input{
+    height:36px;
+    line-height:36px;
+    margin-top:4px;
+    outline:none;
+    border: none;
+}
+
+.wx-addr-save{
+    margin-left: 32px;
+    margin-right: 32px;
+    height:44px;
+    text-align: center;
+}
+
+.wx-addr-save>div>p{
+    height:44px;
+    line-height: 44px;
+    background-color: #19b08f;
+    color: #ffffff;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    font-size:18px;
+}
