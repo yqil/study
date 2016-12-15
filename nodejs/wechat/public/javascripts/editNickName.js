@@ -21,8 +21,10 @@
                 this.myLoadding.showLoadding();
                 $.getJSON('/person/saveUser', data, function(data, status, xhr){
                     if(data){
+                        that.myLoadding.closeLoadding();
                         window.location.href="/person/index";
                     }else {
+                        that.myLoadding.closeLoadding();
                         that.myDialog.showDialog();
                     }
                 });
