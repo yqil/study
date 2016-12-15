@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" />
+        <!-- 引入 Bootstrap -->
+        <link rel="stylesheet" href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/stylesheets/common.css" />
+        <link rel="stylesheet" href="/plugin/my-dialog/my_dialog.css" />
+        <link rel="stylesheet" href="/plugin/my-loadding/my_loadding.css" />
+        <link rel="stylesheet" href="/stylesheets/editAddr.css" />
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+        <title>修改木木号</title>
+    </head>
+
+    <body>
+        <div id="wxEditAddr">
+            <div class="wx-addr-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-3 wx-clear-padding wx-addr-text">
+                        收货人
+                    </div>
+                    <div class="col-xs-9 text-right wx-clear-padding">
+                        <input type="text" v-model="mmh" placeholder="请输入收货人" class="wx-addr-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-addr-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-3 wx-clear-padding wx-addr-text">
+                        手机号码
+                    </div>
+                    <div class="col-xs-9 text-right wx-clear-padding">
+                        <input type="text" v-model="mmh" placeholder="请输入手机号码" class="wx-addr-input">
+                    </div>
+                </div>
+            </div>
+            <div class="wx-addr-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-3 wx-clear-padding wx-addr-text">
+                        地区
+                    </div>
+                    <div class="col-xs-9 text-right wx-clear-padding">
+                        <input type="text" v-model="mmh" placeholder="请选择地区" class="wx-addr-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-addr-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-3 wx-clear-padding wx-addr-text">
+                        详细地址
+                    </div>
+                    <div class="col-xs-9 text-right wx-clear-padding">
+                        <input type="text" v-model="mmh" placeholder="请输入详细地址" class="wx-addr-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-addr-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-3 wx-clear-padding wx-addr-text">
+                        邮编
+                    </div>
+                    <div class="col-xs-9 text-right wx-clear-padding">
+                        <input type="text" v-model="mmh" placeholder="请输入邮编" class="wx-addr-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-addr-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-3 wx-clear-padding wx-addr-text">
+                        备注
+                    </div>
+                    <div class="col-xs-9 text-right wx-clear-padding">
+                        <input type="text" v-model="mmh" placeholder="请输入备注" class="wx-addr-input">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wx-addr-row wx-addr-save">
+                <div class="col-xs-12 text-center wx-clear-padding">
+                    <p v-on:click="save">保存</p>
+                </div>
+            </div>
+
+            <my-dialog :message="dialogMsg"></my-dialog>
+            <my-loadding :message="loaddingMsg"></my-loadding>
+        </div>
+
+        
+        
+        <script src="http://www.zeptojs.cn/zepto.min.js"></script>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
+        <script type="text/javascript" src="/plugin/my-loadding/my_loadding.js"></script>
+        <script src="/javascripts/util.js"></script>
+        <script src="/javascripts/editAddr.js"></script>
+
+        
+    </body>
+
+</html>
