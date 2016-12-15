@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no" />
         <link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet" />
         <!-- 引入 Bootstrap -->
         <link href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/stylesheets/common.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="/plugin/my-dialog/my_dialog.css">
+        <link rel="stylesheet" type="text/css" href="/plugin/my-loadding/my_loadding.css">
         <link href="/stylesheets/editPhone.css" rel="stylesheet" />
         <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
         <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -52,6 +54,7 @@
             </div>
 
             <my-dialog :message="dialogMsg"></my-dialog>
+            <my-loadding :message="loaddingMsg"></my-loadding>
         </div>
 
         
@@ -59,6 +62,7 @@
         <script src="http://www.zeptojs.cn/zepto.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
+        <script type="text/javascript" src="/plugin/my-loadding/my_loadding.js"></script>
         <script src="/javascripts/util.js"></script>
         <script src="/javascripts/editPhone.js"></script>
 
