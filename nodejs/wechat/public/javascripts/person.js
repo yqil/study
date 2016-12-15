@@ -34,6 +34,9 @@
             },
             editPhone: function(){
                 window.location.href="/person/editPhone?phone="+this.phone;
+            },
+            editAddr: function(){
+                window.location.href="/person/editAddr";
             }
         }
     });
