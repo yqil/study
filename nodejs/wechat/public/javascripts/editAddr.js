@@ -3,7 +3,15 @@
     var vm = new Vue({
         el: "#wxEditAddr",
         data: {
-            mmh: null,
+            name: null,
+            phone: null,
+            province: null,
+            city: null,
+            area: null,
+            areaName: null,
+            addrDetail: null,
+            postCode: null,
+            remark: null,
             dialogMsg: "服务器开小差了，请稍后尝试~",
             loaddingMsg: "保存中，请稍后~"
         }
