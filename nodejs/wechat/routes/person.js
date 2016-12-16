@@ -45,6 +45,18 @@ var saveUser = function(req, res){
     });
 };
 
+var saveAddr = function(req, res){
+    var data = req.query.data;
+    data.userId = req.session.userId;
+    var url = "/e/saveAddr.do";
+    httpUtil.post("127.0.0.1", "8080", url, JSON.stringify(data)).then(function(data){
+        res.send(data);
+    }).catch(function (err) {
+        console.log('保存地址失败:'+err);
+        res.send({status:false, msg:"保存地址失败"});
+    });
+};
+
 router.get('/:id', function(req, res, next) {
     console.log("session中的userId:"+req.session.userId);
     console.log("session中的openid:"+req.session.openid);
@@ -64,6 +76,8 @@ router.get('/:id', function(req, res, next) {
         res.render('editAddr', { msg: "修改地址" });
     }else if(id == "saveUser"){
         saveUser(req, res);
+    }else if(id == "saveAddr"){
+        saveAddr(req, res);
     }
 });
 
