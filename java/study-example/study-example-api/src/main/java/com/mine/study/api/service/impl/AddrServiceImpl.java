@@ -41,7 +41,7 @@ public class AddrServiceImpl implements AddrService
             updateAddr.setIfDefault(UserConstant.ADDRTYPE.IFNOTDEFAULT);
             TUserAddressExample example = new TUserAddressExample();
             example.createCriteria().andUserIdEqualTo(addr.getUserId());
-            addressMapper.updateByExampleSelective(updateAddr, null);
+            addressMapper.updateByExampleSelective(updateAddr, example);
         }
         
         log.info("保存地址信息");
