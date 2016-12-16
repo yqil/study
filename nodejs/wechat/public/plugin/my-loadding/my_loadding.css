@@ -16,7 +16,6 @@
 
 .my-loadding>div:nth-child(2){
     position: fixed;
-    z-index: 99999;
     width: 50%;
     left: 25%;
     text-align: center;

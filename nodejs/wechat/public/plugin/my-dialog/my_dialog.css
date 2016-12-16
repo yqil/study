@@ -16,7 +16,6 @@
 
 .my-dialog>div:nth-child(2){
     position: fixed;
-    z-index: 99999;
     width: 70%;
     left: 15%;
     text-align: center;
