@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="/stylesheets/common.css" />
         <link rel="stylesheet" href="/plugin/my-dialog/my_dialog.css" />
         <link rel="stylesheet" href="/plugin/my-loadding/my_loadding.css" />
+        <link rel="stylesheet" href="/plugin/my-location/my_location.css" />
+        <link rel="stylesheet" href="/plugin/my-single-select/my_single_select.css" />
         <link rel="stylesheet" href="/stylesheets/editAddr.css" />
         <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
         <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -49,7 +51,7 @@
                         地区
                     </div>
                     <div class="col-xs-9 text-right wx-clear-padding">
-                        <input type="text" v-model="areaName" placeholder="请选择地区" class="wx-addr-input">
+                        <input type="text" v-model="areaName" placeholder="请选择地区" class="wx-addr-input" v-on:click="selectArea">
                     </div>
                 </div>
             </div>
@@ -82,6 +84,35 @@
                 </div>
             </div>
 
+            <div class="my-single-select">
+                <div class="my-single-select-mask"></div>
+                <div class="my-single-select-content">
+                    <div class="row wx-clear-margin my-single-select-top">
+                        <div class="col-xs-3 wx-clear-padding">
+                            取消
+                        </div>
+                        <div class="col-xs-9 text-right wx-clear-padding">
+                            确定
+                        </div>
+                    </div>
+                    <div class="row wx-clear-margin my-single-select-core">
+                        <div></div>
+                        <div class="my-single-select-selected"></div>
+                        <div class="col-xs-12 text-center wx-clear-padding">
+                            <div class="my-single-select-core-item">北京11</div>
+                            <div class="my-single-select-core-item">北京22</div>
+                            <div class="my-single-select-core-item">北京33</div>
+                            <div class="my-single-select-core-item">北京44</div>
+                            <div class="my-single-select-core-item">北京55</div>
+                            <div class="my-single-select-core-item">北京66</div>
+                            <div class="my-single-select-core-item">北京77</div>
+                            <div class="my-single-select-core-item">北京88</div>
+                            <div class="my-single-select-core-item">北京99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <my-dialog :message="dialogMsg"></my-dialog>
             <my-loadding :message="loaddingMsg"></my-loadding>
         </div>
@@ -90,8 +121,11 @@
         
         <script src="http://www.zeptojs.cn/zepto.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
-        <script type="text/javascript" src="/plugin/my-loadding/my_loadding.js"></script>
+        <script src="/plugin/my-dialog/my_dialog.js"></script>
+        <script src="/plugin/my-loadding/my_loadding.js"></script>
+        <script src="/plugin/my-location/locationData.js"></script>
+        <script src="/plugin/my-location/my_location.js"></script>
+        <script src="/plugin/my-single-select/my_single_select.js"></script>
         <script src="/javascripts/util.js"></script>
         <script src="/javascripts/editAddr.js"></script>
 
