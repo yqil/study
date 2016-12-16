@@ -1,4 +1,4 @@
-
+"use strict";
 ! function() {
     var vm = new Vue({
         el: "#wxEditAddr",
@@ -15,6 +15,9 @@
             loaddingMsg: "保存中，请稍后~"
         },
         methods: {
+            selectArea: function(){
+                
+            },
             save: function(){
                 var that = this;
                 var data = {
