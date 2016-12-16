@@ -60,6 +60,8 @@ router.get('/:id', function(req, res, next) {
         res.render('editMmh', { msg: "修改昵称" });
     }else if(id == "editPhone"){
         res.render('editPhone', { msg: "修改手机号码" });
+    }else if(id == "editAddr"){
+        res.render('editAddr', { msg: "修改地址" });
     }else if(id == "saveUser"){
         saveUser(req, res);
     }
