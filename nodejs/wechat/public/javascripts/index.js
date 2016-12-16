@@ -22,7 +22,7 @@
 				 */
 				$.getJSON('/bind/submit', data, function(data, status, xhr){
 					console.log(data);
-					if(data && data.status == true){
+					if(data && data.status){
 						window.location.href="/bind/center";
 					}else {
 						alert(data.msg);
