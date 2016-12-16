@@ -30,7 +30,7 @@
                     }
                 };
                 this.myLoadding.showLoadding();
-                $.getJSON('/person/saveUser', data, function(data, status, xhr){
+                $.getJSON('/person/saveAddr', data, function(data, status, xhr){
                     if(data && data.status){
                         that.myLoadding.closeLoadding();
                         window.location.href="/person/index";
