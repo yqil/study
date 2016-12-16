@@ -17,4 +17,15 @@ public class UserConstant
          */
         Integer QQ = 2;
     }
+    
+    public interface ADDRTYPE {
+        /**
+         * 不默认
+         */
+        Integer IFNOTDEFAULT = 1;
+        /**
+         * 默认
+         */
+        Integer IFDEFAULT = 2;
+    }
 }

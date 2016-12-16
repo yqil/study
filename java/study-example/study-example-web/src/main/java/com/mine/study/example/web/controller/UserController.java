@@ -18,7 +18,6 @@ import com.mine.study.common.model.autocode.TUser;
 import com.mine.study.common.model.autocode.TUserExample;
 import com.mine.study.common.service.UserService;
 import com.mine.study.common.util.ErrorCode;
-import com.mine.study.common.util.PropertiesUtil;
 import com.mine.study.whole.util.exception.SysException;
 import com.mine.study.whole.util.result.Result;
 
@@ -28,12 +27,6 @@ public class UserController
 {
 
     private static Logger log = LoggerFactory.getLogger(UserController.class);
-    
-    /**
-     * 读取配置文件中的内容，该配置在config.properties和pom.xml中
-     */
-    @Autowired
-    private PropertiesUtil propertiesUtil; 
     
     @Autowired
     private UserService userService;
@@ -58,8 +51,10 @@ public class UserController
             
             return new Result(ErrorCode.SUCCESS.code, ErrorCode.SUCCESS.msg, userService.queryThirdUserId(appId), true);
         }catch(SysException e){
+            log.error("getUserIdByOpenid出现异常：", e);
             return new Result(e.getCode(), e.getMessage(), null, false);
         }catch(Exception e){
+            log.error("getUserIdByOpenid出现异常：", e);
             return new Result(ErrorCode.SYSEXCEPTION.code, ErrorCode.SYSEXCEPTION.msg, null, false);
         }
     }
@@ -76,8 +71,10 @@ public class UserController
             
             return new Result(ErrorCode.SUCCESS.code, ErrorCode.SUCCESS.msg, userService.thirdBind(user), true);
         }catch(SysException e){
+            log.error("bindUser出现异常：", e);
             return new Result(e.getCode(), e.getMessage(), null, false);
         }catch(Exception e){
+            log.error("bindUser出现异常：", e);
             return new Result(ErrorCode.SYSEXCEPTION.code, ErrorCode.SYSEXCEPTION.msg, null, false);
         }
     }
@@ -97,25 +94,34 @@ public class UserController
             
             return new Result(ErrorCode.SUCCESS.code, ErrorCode.SUCCESS.msg, rs, true);
         }catch(Exception e){
+            log.error("queryUser出现异常：", e);
             return new Result(ErrorCode.SYSEXCEPTION.code, ErrorCode.SYSEXCEPTION.msg, null, false);
         }
     }
     
     @RequestMapping(value = "/listUser", method = RequestMethod.GET)
     @ResponseBody
-    public List<TUser> listUser() throws Exception{
-        log.info("获取配置文件中的内容:{}", propertiesUtil.getUrl());
-        List<TUser> list = userService.listUser(null);
-        
-        return list;
+    public Result listUser() throws Exception{
+        try{
+            List<TUser> list = userService.listUser(null);
+            return new Result(ErrorCode.SUCCESS.code, ErrorCode.SUCCESS.msg, list, true);
+        }catch(Exception e){
+            log.error("listUser出现异常：", e);
+            return new Result(ErrorCode.SYSEXCEPTION.code, ErrorCode.SYSEXCEPTION.msg, null, false);
+        }
     }
     
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
     @ResponseBody
-    public String saveUser(@RequestBody TUser user) throws Exception{
-        log.info("saveUser传入参数:{}", JSON.toJSONString(user));
+    public Result saveUser(@RequestBody TUser user) throws Exception{
+        try{
+            log.info("saveUser传入参数:{}", JSON.toJSONString(user));
+            String userId = userService.saveUser(user);
+            return new Result(ErrorCode.SUCCESS.code, ErrorCode.SUCCESS.msg, userId, true);
+        }catch(Exception e){
+            log.error("listUser出现异常：", e);
+            return new Result(ErrorCode.SYSEXCEPTION.code, ErrorCode.SYSEXCEPTION.msg, null, false);
+        }
         
-        return userService.saveUser(user);
     }
-    
 }
