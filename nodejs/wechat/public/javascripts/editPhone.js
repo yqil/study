@@ -22,7 +22,7 @@
                         }
                     };
                     $.getJSON('/person/saveUser', data, function(data, status, xhr){
-                        if(data){
+                        if(data && data.status){
                             that.myLoadding.closeLoadding();
                             window.location.href="/person/index";
                         }else {
