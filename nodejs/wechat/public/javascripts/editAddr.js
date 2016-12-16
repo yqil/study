@@ -13,7 +13,7 @@
             postCode: null,
             dialogMsg: "服务器开小差了，请稍后尝试~",
             loaddingMsg: "保存中，请稍后~"
-        }
+        },
         methods: {
             save: function(){
                 var that = this;
