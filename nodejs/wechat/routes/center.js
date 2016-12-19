@@ -7,8 +7,7 @@ var queryUserInfo = function(userId){
 		var data = {
 			userId: userId
 		};
-		var url = "/e/queryUser.do?userId="+userId;
-		httpUtil.get("127.0.0.1", "8080", url).then(function(data){
+		httpUtil.post("127.0.0.1", "8080", "/e/queryUser.do", JSON.stringify(data)).then(function(data){
 			data = JSON.parse(data);
 			if(data && data.status && data.content){
 				resolver(data);
@@ -27,7 +26,7 @@ var queryUserAccount = function(userId){
 		var url = "/e/queryAccount.do?type=JIFEN&userId="+userId
 		httpUtil.get("127.0.0.1", "8080", url).then(function(data){
 			data = JSON.parse(data);
-			if(data && data.status && data.content){
+			if(data && data.status){
 				resolver(data);
 			}else {
 				resolver({status:false, msg:"获取用户积分信息失败"});
@@ -49,7 +48,8 @@ router.get('/', function(req, res, next) {
 					if(accountInfo && accountInfo.status){
 						res.send({
 							userInfo: userInfo.content,
-							accountInfo: accountInfo.content
+							accountInfo: accountInfo.content,
+							status: true
 						});
 					}else {
 						res.send(accountInfo);
