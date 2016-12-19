@@ -79,11 +79,11 @@ public class UserController
         }
     }
     
-    @RequestMapping(value = "/queryUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/queryUser", method = RequestMethod.GET)
     @ResponseBody
     public Result queryUser(@RequestBody TUser user){
         try{
-            log.info("bindUser传入参数:{}", JSON.toJSONString(user));
+            log.info("queryUser传入参数:{}", JSON.toJSONString(user));
             if(user == null){
                 return new Result(ErrorCode.PARAMISNULL.code, ErrorCode.PARAMISNULL.msg, null, false);
             }
