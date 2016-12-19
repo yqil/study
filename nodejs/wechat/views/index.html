@@ -21,7 +21,7 @@
 
 	<body>
 		<div id="wxBind">
-			<div class="wx-row wx-country">
+			<div class="wx-index-row wx-country">
 				<div class="row wx-clear-margin">
 					<div class="col-xs-6 wx-clear-padding">
 						国家/地区
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="wx-row">
+			<div class="wx-index-row">
 				<div class="row wx-clear-margin">
 					<div class="col-xs-2 text-right wx-clear-padding">
 						+86
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 	
-			<div class="wx-row">
+			<div class="wx-index-row">
 				<div class="row wx-clear-margin">
 					<div class="col-xs-2 text-right wx-clear-padding">
 						验证码
@@ -50,18 +50,16 @@
 					<div class="col-xs-6 wx-clear-padding">
 						<input type="number" v-model="validCode" placeholder="请输入短信验证码" />
 					</div>
+					<!-- <div class="col-xs-4 text-right wx-clear-padding">
+						验证码
+					</div> -->
 					<div class="col-xs-4 text-center wx-clear-padding">
 						<p class="wx-valid-code">短信验证码</p>
 					</div>
 				</div>
 			</div>
 	
-			<div class="wx-row">
-				<!--
-                	作者：445375039@qq.com
-                	时间：2016-11-25
-                	描述：为啥这里需要加个border，如果不加border，在安卓手机上密码的input会换行
-                -->
+			<div class="wx-index-row">
 				<div class="row wx-clear-margin">
 					<div class="col-xs-2 text-right wx-clear-padding">
 						密码
