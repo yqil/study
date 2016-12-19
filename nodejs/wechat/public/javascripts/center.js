@@ -11,7 +11,8 @@
 			var that = this;
 			$.getJSON('/center', null, function(data, status, xhr){
 				if(data && data.status){
-					that.nickName = data.userInfo.content.nickName;
+					that.nickName = data.userInfo && data.userInfo.nickName;
+					that.integral = (data.accountInfo || 0) && data.accountInfo.accountBalance;
 				}else {
 					that.myDialog.showDialog();
 				}
