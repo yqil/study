@@ -45,6 +45,7 @@
 .my-single-select-core{
     height: 150px;
     position: relative;
+    overflow: hidden;
 }
 
 .my-single-select-core>div:first-child{
@@ -67,18 +68,23 @@
 }
 
 .my-single-select-core>div:nth-child(3){
-    -moz-border-transform: -moz-border-translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
     -webkit-transform: -webkit-translate3d(0px, 0px, 0px);
-    transform: translate3d(0px, 30px, 0px);
-    transition: all 0.3s;
+    -ms-transform: -ms-translate3d(0px, 60px, 0px);
+    transform: translate3d(0px, 60px, 0px);
+    /*transition: all 0.3s;*/
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .my-single-select-core-item{
     height: 30px;
     line-height: 30px;
-    text-overflow: ellipsis;
+    /*text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden;*/
     color: #000;
     /*color: #808080;*/
 }
