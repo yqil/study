@@ -4,13 +4,17 @@
 		data: {
 			photo: null,
 			nickName: null,
-			integral: 0
+			integral: 0,
+            dialogMsg: "服务器开小差了，请稍后尝试~"
 		},
 		mounted: function(){
-//			this.getUserById();
 			var that = this;
 			$.getJSON('/center', null, function(data, status, xhr){
-				that.nickName = data.content.nickName;
+				if(data && data.status){
+					that.nickName = data.userInfo.content.nickName;
+				}else {
+					that.myDialog.showDialog();
+				}
 			});
 		},
 		methods: {

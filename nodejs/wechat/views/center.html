@@ -8,6 +8,7 @@
 		<!-- 引入 Bootstrap -->
 		<link rel="stylesheet" href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="/stylesheets/common.css" />
+		<link rel="stylesheet" href="/plugin/my-dialog/my_dialog.css" />
 		<link rel="stylesheet" href="/stylesheets/center.css" />
 		<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
 		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -71,10 +72,13 @@
 					<p class="wx-center-asset-text wx-clear-margin">奖品</p>
 				</div>
 			</div>
+
+			<my-dialog :message="dialogMsg"></my-dialog>
 		</div>
 		
 		<script src="http://www.zeptojs.cn/zepto.min.js"></script>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
 		<script src="/javascripts/center.js"></script>
 	</body>
 
