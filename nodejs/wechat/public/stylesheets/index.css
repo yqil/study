@@ -1,18 +1,16 @@
-/*.wx-bind{
-	width:100%;
-}
-*/
-.wx-row{
+
+.wx-index-row{
 	margin: 0 12px 0 12px;
 	border-bottom: 1px solid #ccc;
 	height:44px;
 	line-height: 44px;
-	/*width: 100%;*/
+	clear: both;
 }
+
 .wx-country{
 	margin-top: 24px;
 }
-.wx-row input{
+.wx-index-row input{
 	border: none;
 	margin-left:12px;
 	height:36px;

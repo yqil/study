@@ -1,7 +1,6 @@
 body{
     background-color: #ebebeb;
     font-size: 18px;
-    /*height: 100%;*/
 }
 
 .wx-addr-row{
@@ -9,6 +8,7 @@ body{
     background-color: #ffffff;
     height: 44px;
     line-height: 44px;
+    clear: both;
 }
 
 .wx-addr-text{
