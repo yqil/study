@@ -21,6 +21,9 @@
 		methods: {
 			accessPerson: function(){
 				window.location.href="/person/index";
+			},
+			accessIntegral: function(){
+				window.location.href="/integral/index";
 			}
 		}
 	});
