@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mine.study.common.model.autocode.TUserAccountDetailExample;
 import com.mine.study.common.service.AccountService;
 import com.mine.study.common.util.ErrorCode;
 import com.mine.study.whole.util.exception.SysException;
+import com.mine.study.whole.util.mybatis.Page;
 import com.mine.study.whole.util.result.Result;
 
 @Controller
@@ -48,5 +50,29 @@ public class AccountController
         }
     }
     
+    @RequestMapping(value = "/listAccountDetail", method = RequestMethod.GET)
+    @ResponseBody
+    public Result listAccountDetail(@RequestParam(value="accountId", required=true) String accountId,
+            @RequestParam(value="type", required=true) Integer page,
+            @RequestParam(value="type", required=true) Integer pageSize){
+        try{
+            log.info("listAccount传入参数，账户id:{}，页码:{}", accountId, page);
+            Page p = new Page();
+            p.setBegin(page*pageSize);
+            p.setLength(pageSize);
+            TUserAccountDetailExample example = new TUserAccountDetailExample();
+            example.createCriteria().andAccountIdEqualTo(accountId);
+            example.setPage(p);
+            example.setOrderByClause("create_time desc");
+            
+            return new Result(ErrorCode.SUCCESS.code, ErrorCode.SUCCESS.msg, accountService.listAccountDetail(example), true);
+        }catch(SysException e){
+            log.error("queryAccount出现异常：", e);
+            return new Result(e.getCode(), e.getMessage(), null, false);
+        }catch(Exception e){
+            log.error("queryAccount出现异常：", e);
+            return new Result(ErrorCode.SYSEXCEPTION.code, ErrorCode.SYSEXCEPTION.msg, null, false);
+        }
+    }
     
 }
