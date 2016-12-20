@@ -1,0 +1,87 @@
+body{
+    background-color: #ebebeb;
+}
+.wx-integral-rule{
+    background-color: #19B08F;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    padding-right: 12px;
+    color: #ffffff;
+}
+
+.wx-integral-value{
+    background-color: #19B08F;
+    font-size: 22px;
+    padding-top: 24px;
+    color: #ffffff;
+}
+.wx-integral-text{
+    background-color: #19B08F;
+    padding-bottom: 30px;
+    color: #ffffff;
+}
+
+.wx-integral-btn{
+    height: 44px;
+    line-height: 44px;
+    background-color: #14997C;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.wx-integral-btn span{
+    display: inline-block;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+}
+
+.wx-integral-line{
+    border-right: 1px solid #ffffff;
+}
+
+.wx-integral-detail{
+    width: 100%;
+    margin-top:15px;
+    height:44px;
+    line-height: 44px;
+    background-color: #ffffff;
+}
+
+.wx-integral-detail-content{
+    height: 44px;
+    margin: 0 12px 0 12px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.wx-integral-detail-right{
+    height:24px;
+    width:24px;
+}
+
+.wx-integral-detail-row{
+    width: 100%;
+    background-color: #ffffff;
+    /*clear: both;*/
+}
+
+.wx-integral-detail-row>div{
+    margin: 0 12px 0 12px;
+}
+
+.wx-integral-detail-row>div:first-child{
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    padding-top: 5px;
+}
+
+.wx-integral-detail-row>div:nth-child(2){
+    border-bottom: 1px solid #ebebeb;
+    font-size: 12px;
+    /*height: 24px;*/
+    /*line-height: 24px;*/
+    padding-bottom: 5px;
+    color: #868686;
+}
