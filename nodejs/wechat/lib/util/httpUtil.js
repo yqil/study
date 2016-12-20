@@ -22,8 +22,8 @@ var get = function(hostName, port, url){
 			});
 		});
 	
-		req.on('error', function(e) {
-			reject(e);
+		req.on('error', function(err) {
+			reject(err);
 		});
 		
 		req.end();
