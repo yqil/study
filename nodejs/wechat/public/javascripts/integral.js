@@ -7,7 +7,10 @@
         },
         methods: {
             accessIntegralDetail: function(){
-                
+                window.location.href="/integral/detail";
+            },
+            accessIntegralExchange: function(){
+                window.location.href="/integral/exchange";
             }
         }
     });
