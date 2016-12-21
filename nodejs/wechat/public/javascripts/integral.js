@@ -11,6 +11,9 @@
             },
             accessIntegralExchange: function(){
                 window.location.href="/integral/exchange";
+            },
+            accessIntegralLottery: function(){
+                window.location.href="/integral/lottery";
             }
         }
     });
