@@ -7,7 +7,6 @@
         },
         methods: {
             accessLottery: function(e){
-                // debugger;
                 var type = $(e.target).data("type");
                 var status = $(e.target).data("status");
                 if(status == "1"){
