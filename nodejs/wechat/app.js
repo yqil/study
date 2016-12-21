@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var center = require('./routes/center');
 var person = require('./routes/person');
 var integral = require('./routes/integral');
+var lottery = require('./routes/lottery');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/users', users);
 app.use('/center', center);
 app.use('/person', person);
 app.use('/integral', integral);
+app.use('/lottery', lottery);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
