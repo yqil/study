@@ -9,3 +9,13 @@
 .wx-integralDetail-top-content>span:nth-child(2){
     font-size: 20px;
 }
+
+.wx-integralDetail-row{
+    height: 75px;
+    line-height: 75px;
+}
+
+.wx-integralDetail-row>div{
+    margin: 0 12px 0 12px;
+    margin-bottom: 1px solid #868686;
+}
