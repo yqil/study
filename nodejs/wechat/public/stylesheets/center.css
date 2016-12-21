@@ -9,6 +9,10 @@ body{
 .wx-center-photo-wrapper{
 	padding:12px 0 6px 0;
 }
+
+.wx-center-nickName{
+	color: #ffffff;
+}
 .wx-center-photo{
 	width:80px;
 	height:80px;
