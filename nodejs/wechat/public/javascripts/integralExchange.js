@@ -21,7 +21,7 @@
                     e.target.src = "/images/circle-1@2x.png";
                     this.total = this.total - prize * num;
                 }
-                if(this.total < this.integral){
+                if(this.total != 0 && this.total < this.integral){
                     $("#exchange").css("background-color", "#19B08F");
                 }else {
                     $("#exchange").css("background-color", "#868686");
