@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" />
+        <!-- 引入 Bootstrap -->
+        <link rel="stylesheet" href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/stylesheets/common.css" />
+        <link rel="stylesheet" href="/plugin/my-dialog/my_dialog.css" />
+        <link rel="stylesheet" href="/stylesheets/integralExchange.css" />
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+        <title>积分</title>
+    </head>
+
+    <body>
+        <div id="wxIntegralDetail">
+            <div class="wx-integralDetail-top">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-12 text-center wx-clear-padding wx-integralDetail-top-content">
+                        <span>积分</span>
+                        <span>888</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-integralDetail-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-12 text-center wx-clear-padding wx-integralDetail-top-content">
+                        <span>积分</span>
+                        <span>888</span>
+                    </div>
+                </div>
+            </div>
+
+            <my-dialog :message="dialogMsg"></my-dialog>
+        </div>
+
+        
+        
+        <script src="http://www.zeptojs.cn/zepto.min.js"></script>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
+        <script src="/javascripts/util.js"></script>
+        <script src="/javascripts/integralExchange.js"></script>
+
+        
+    </body>
+
+</html>
