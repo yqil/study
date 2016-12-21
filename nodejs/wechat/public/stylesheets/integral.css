@@ -77,6 +77,10 @@ body{
     padding-top: 5px;
 }
 
+.wx-integral-detail-row>div:first-child>div:nth-child(2){
+    color: #FF5F7A;
+}
+
 .wx-integral-detail-row>div:nth-child(2){
     border-bottom: 1px solid #ebebeb;
     font-size: 12px;
