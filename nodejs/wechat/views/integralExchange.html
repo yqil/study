@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
         <meta name="format-detection" content="telephone=no" />
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" />
         <!-- 引入 Bootstrap -->
@@ -20,20 +20,162 @@
     </head>
 
     <body>
-        <div id="wxIntegralDetail">
-            <div class="wx-integralDetail-top">
+        <div id="wxIntegralExchange">
+            <div class="wx-integralExchange-top">
                 <div class="row wx-clear-margin">
-                    <div class="col-xs-12 text-center wx-clear-padding wx-integralDetail-top-content">
+                    <div class="col-xs-12 text-center wx-clear-padding wx-integralExchange-top-content">
                         <span>积分</span>
-                        <span>888</span>
+                        <span>{{ integral }}</span>
                     </div>
                 </div>
             </div>
 
-            <div class="wx-integralDetail-row">
+            <div class="wx-integralExchange-row">
                 <div class="row wx-clear-margin">
                     <div class="col-xs-1 text-center wx-clear-padding">
-                        <input type="radio"/>
+                        <img src="/images/circle-1@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" v-on:click="selectRow">
+                    </div>
+                    <div class="col-xs-8 wx-clear-padding">
+                        <div class="wx-integralExchange-giftPic">
+                            <img src="/images/duihuan-chanpin-@2x.png" alt="图片无法显示">
+                        </div>
+                        <div class="wx-integralExchange-giftInfo">
+                            <p>木木君公仔木木君公仔木木君公仔木木君公仔</p>
+                            <p>240</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-right wx-clear-padding wx-integralExchange-row-number">
+                        <img src="/images/Plus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select"  data-prize="240" v-on:click="addNum" />
+                        <input type="number" value="1" />
+                        <img src="/images/minus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="reduceNum" />
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-integralExchange-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-1 text-center wx-clear-padding">
+                        <img src="/images/circle-1@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" v-on:click="selectRow">
+                    </div>
+                    <div class="col-xs-8 wx-clear-padding">
+                        <div class="wx-integralExchange-giftPic">
+                            <img src="/images/duihuan-chanpin-@2x.png" alt="图片无法显示">
+                        </div>
+                        <div class="wx-integralExchange-giftInfo">
+                            <p>木木君公仔木木君公仔木木君公仔木木君公仔</p>
+                            <p>240</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-right wx-clear-padding wx-integralExchange-row-number">
+                        <img src="/images/Plus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="addNum" />
+                        <input type="number" value="1" />
+                        <img src="/images/minus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="reduceNum" />
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-integralExchange-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-1 text-center wx-clear-padding">
+                        <img src="/images/circle-1@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" v-on:click="selectRow">
+                    </div>
+                    <div class="col-xs-8 wx-clear-padding">
+                        <div class="wx-integralExchange-giftPic">
+                            <img src="/images/duihuan-chanpin-@2x.png" alt="图片无法显示">
+                        </div>
+                        <div class="wx-integralExchange-giftInfo">
+                            <p>木木君公仔木木君公仔木木君公仔木木君公仔</p>
+                            <p>240</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-right wx-clear-padding wx-integralExchange-row-number">
+                        <img src="/images/Plus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="addNum" />
+                        <input type="number" value="1" />
+                        <img src="/images/minus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="reduceNum" />
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-integralExchange-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-1 text-center wx-clear-padding">
+                        <img src="/images/circle-1@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" v-on:click="selectRow">
+                    </div>
+                    <div class="col-xs-8 wx-clear-padding">
+                        <div class="wx-integralExchange-giftPic">
+                            <img src="/images/duihuan-chanpin-@2x.png" alt="图片无法显示">
+                        </div>
+                        <div class="wx-integralExchange-giftInfo">
+                            <p>木木君公仔木木君公仔木木君公仔木木君公仔</p>
+                            <p>240</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-right wx-clear-padding wx-integralExchange-row-number">
+                        <img src="/images/Plus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="addNum" />
+                        <input type="number" value="1" />
+                        <img src="/images/minus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="reduceNum" />
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-integralExchange-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-1 text-center wx-clear-padding">
+                        <img src="/images/circle-1@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" v-on:click="selectRow">
+                    </div>
+                    <div class="col-xs-8 wx-clear-padding">
+                        <div class="wx-integralExchange-giftPic">
+                            <img src="/images/duihuan-chanpin-@2x.png" alt="图片无法显示">
+                        </div>
+                        <div class="wx-integralExchange-giftInfo">
+                            <p>木木君公仔木木君公仔木木君公仔木木君公仔</p>
+                            <p>240</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-right wx-clear-padding wx-integralExchange-row-number">
+                        <img src="/images/Plus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="addNum" />
+                        <input type="number" value="1" />
+                        <img src="/images/minus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="reduceNum" />
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-integralExchange-row">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-1 text-center wx-clear-padding">
+                        <img src="/images/circle-1@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" v-on:click="selectRow">
+                    </div>
+                    <div class="col-xs-8 wx-clear-padding">
+                        <div class="wx-integralExchange-giftPic">
+                            <img src="/images/duihuan-chanpin-@2x.png" alt="图片无法显示">
+                        </div>
+                        <div class="wx-integralExchange-giftInfo">
+                            <p>木木君公仔木木君公仔木木君公仔木木君公仔</p>
+                            <p>240</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-right wx-clear-padding wx-integralExchange-row-number">
+                        <img src="/images/Plus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="addNum" />
+                        <input type="number" value="1" />
+                        <img src="/images/minus@2x.png" alt="图片无法显示" class="wx-integralExchange-row-select" data-prize="240" v-on:click="reduceNum" />
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-integralExchange-bottom">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-9 wx-clear-padding wx-integralExchange-bottom-total">
+                        <span>合计：</span>
+                        <span>{{ total }}</span>
+                    </div>
+                    <div class="col-xs-3 text-right wx-clear-padding wx-integralExchange-bottom-exchange">
+                        <span id="exchange">兑换</span>
                     </div>
                 </div>
             </div>

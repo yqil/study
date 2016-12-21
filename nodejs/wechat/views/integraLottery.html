@@ -9,38 +9,27 @@
         <link rel="stylesheet" href="/plugin/node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/stylesheets/common.css" />
         <link rel="stylesheet" href="/plugin/my-dialog/my_dialog.css" />
-        <link rel="stylesheet" href="/plugin/my-loadding/my_loadding.css" />
-        <link rel="stylesheet" href="/stylesheets/editNickName.css" />
+        <link rel="stylesheet" href="/stylesheets/integraLottery.css" />
         <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
         <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
         <!--[if lt IE 9]>
          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
-        <title>修改昵称</title>
+        <title>积分</title>
     </head>
 
     <body>
-        <div id="wxEditPersonNickName">
-            <div class="wx-nickName-row">
+        <div id="wxIntegralLottery">
+            <div class="wx-integralLottery-row">
                 <div class="row wx-clear-margin">
-                    <div class="col-xs-2 wx-clear-padding wx-nickName-text">
-                        昵称
+                    <div class="col-xs-12 wx-clear-padding text-right">
+                        积分规则
                     </div>
-                    <div class="col-xs-10 text-right wx-clear-padding">
-                        <input type="text" v-model="nickName" placeholder="请输入昵称" class="wx-nickName-input">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="wx-nickName-row wx-nickName-save">
-                <div class="col-xs-12 wx-clear-padding">
-                    <p v-on:click="save">保存</p>
                 </div>
             </div>
 
             <my-dialog :message="dialogMsg"></my-dialog>
-            <my-loadding :message="loaddingMsg"></my-loadding>
         </div>
 
         
@@ -48,9 +37,8 @@
         <script src="http://www.zeptojs.cn/zepto.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script type="text/javascript" src="/plugin/my-dialog/my_dialog.js"></script>
-        <script type="text/javascript" src="/plugin/my-loadding/my_loadding.js"></script>
         <script src="/javascripts/util.js"></script>
-        <script src="/javascripts/editNickName.js"></script>
+        <script src="/javascripts/integraLottery.js"></script>
 
         
     </body>

@@ -11,6 +11,8 @@ router.get('/:id', function(req, res, next) {
         res.render('integralDetail', { msg: "进入用户积分明细界面" });
     }else if(id == "exchange"){
         res.render('integralExchange', { msg: "进入用户积分兑换界面" });
+    }else if(id == "lottery"){
+        res.render('integraLottery', { msg: "进入用户积分抽奖界面" });
     }
 });
 
