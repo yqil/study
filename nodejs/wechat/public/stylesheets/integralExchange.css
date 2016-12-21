@@ -1,0 +1,11 @@
+.wx-integralDetail-top{
+    height: 88px;
+    line-height: 88px;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: #19B08F;
+}
+
+.wx-integralDetail-top-content>span:nth-child(2){
+    font-size: 20px;
+}
