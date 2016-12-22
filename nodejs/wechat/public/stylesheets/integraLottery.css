@@ -1,0 +1,46 @@
+body{
+    background-color: #ebebeb;
+}
+
+.wx-integralLottery-row{
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 12px;
+}
+
+.wx-integralLottery-row:first-child{
+    margin: 0;
+}
+
+.wx-integralLottery-row>div{
+    margin: 0 12px 0 12px;
+}
+
+.wx-integralLottery-activityPic>img{
+    padding-top: 12px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.wx-integralLottery-activityStatus>img{
+    width: 100%;
+}
+
+.wx-integralLottery-activityDes{
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.wx-integralLottery-activityDes>div{
+    height: 20px;
+    line-height: 20px;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.wx-integralLottery-activityDes>div:nth-child(2){
+    color: #868686;
+    font-size: 12px;
+}

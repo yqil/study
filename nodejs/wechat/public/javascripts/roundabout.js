@@ -1,6 +1,6 @@
 ! function() {
     var vm = new Vue({
-        el: "#wxIntegralLottery",
+        el: "#wxRoundabout",
         data: {
             integral: 888,
             dialogMsg: "服务器开小差了，请稍后尝试~"
