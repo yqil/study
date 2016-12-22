@@ -21,12 +21,102 @@
 
     <body>
         <div id="wxRoundabout">
-            <div class="wx-integralExchange-top">
+            <div class="row wx-clear-margin wx-roundabout-top">
+                <div class="col-xs-12 text-center wx-clear-padding">
+                    <img src="/images/roudabout_top.jpg" alt="图片无法显示" />
+                </div>
+                <div class="col-xs-12 text-center wx-clear-padding">
+                    <span>您还有{{ freeNum }}次免费抽奖机会</span>
+                </div>
+            </div>
+
+            <div class="wx-roundabout-turntable">
                 <div class="row wx-clear-margin">
-                    <div class="col-xs-12 text-center wx-clear-padding wx-integralExchange-top-content">
-                        <span>积分</span>
-                        <span>{{ integral }}</span>
+                    <div class="col-xs-12 text-center wx-clear-padding wx-roundabout-turntable-border">
+                        <img src="/images/roundabout_border.png" alt="图片无法显示" />
                     </div>
+                </div>
+
+                <div class="wx-roundabout-turntable-prizePic">
+                    <div class="row wx-clear-margin wx-roundabout-prizePic">
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/100.png" alt="图片无法显示" />
+                        </div>
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/500.png" alt="图片无法显示" />
+                        </div>
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/dlty.png" alt="图片无法显示" />
+                        </div>
+                    </div>
+
+                    <div class="row wx-clear-margin wx-roundabout-prizePic">
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/xmznsh.png" alt="图片无法显示" />
+                        </div>
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/roundabout_start.png" alt="图片无法显示" v-on:click="startLottery" />
+                        </div>
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/cpsjt.png" alt="图片无法显示" />
+                        </div>
+                    </div>
+
+                    <div class="row wx-clear-margin wx-roundabout-prizePic">
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/sorry.png" alt="图片无法显示" />
+                        </div>
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/Ipad-mini.png" alt="图片无法显示" />
+                        </div>
+                        <div class="col-xs-4 text-center wx-clear-padding">
+                            <img src="/images/IPhone-7Plus.png" alt="图片无法显示" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wx-roundabout-roll">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-12 text-center wx-clear-padding wx-roundabout-roll-top">
+                        会员中奖榜单
+                    </div>
+                </div>
+                <div class="wx-roundabout-roll-content">
+                    <div id="firstRollList" class="wx-roundabout-rollList"></div>
+                    <div id="secondRollList" class="wx-roundabout-rollList"></div>
+                </div>
+            </div>
+
+
+
+            <div class="wx-roundabout-rule">
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-12 text-center wx-clear-padding wx-roundabout-rule-top">
+                        活动规则说明
+                    </div>
+                </div>
+
+                <div class="row wx-clear-margin">
+                    <div class="col-xs-12 text-left wx-clear-padding wx-roundabout-rule-content">
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖注册并登录可免费抽奖注册并登录可免费抽奖注册并登录可免费抽奖注册并登录可免费抽奖注册并登录可免费抽奖注册并登录可免费抽奖注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                        1、注册并登录可免费抽奖<br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row wx-clear-margin wx-roundabout-bottom">
+                <div class="col-xs-12 text-center wx-clear-padding">
+                    <img src="/images/roundabout_bottom.png" alt="图片无法显示" />
                 </div>
             </div>
 
