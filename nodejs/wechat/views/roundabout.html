@@ -40,37 +40,37 @@
                 <div class="wx-roundabout-turntable-prizePic">
                     <div class="row wx-clear-margin wx-roundabout-prizePic">
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/100.png" alt="图片无法显示" />
+                            <img src="/images/100.png" id="prize0" alt="图片无法显示" />
                         </div>
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/500.png" alt="图片无法显示" />
+                            <img src="/images/500.png" id="prize1" alt="图片无法显示" />
                         </div>
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/dlty.png" alt="图片无法显示" />
+                            <img src="/images/dlty.png" id="prize2" alt="图片无法显示" />
                         </div>
                     </div>
 
                     <div class="row wx-clear-margin wx-roundabout-prizePic">
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/xmznsh.png" alt="图片无法显示" />
+                            <img src="/images/xmznsh.png" id="prize7" alt="图片无法显示" />
                         </div>
                         <div class="col-xs-4 text-center wx-clear-padding">
                             <img src="/images/roundabout_start.png" alt="图片无法显示" v-on:click="startLottery" />
                         </div>
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/cpsjt.png" alt="图片无法显示" />
+                            <img src="/images/cpsjt.png" id="prize3" alt="图片无法显示" />
                         </div>
                     </div>
 
                     <div class="row wx-clear-margin wx-roundabout-prizePic">
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/sorry.png" alt="图片无法显示" />
+                            <img src="/images/sorry.png" id="prize6" alt="图片无法显示" />
                         </div>
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/Ipad-mini.png" alt="图片无法显示" />
+                            <img src="/images/Ipad-mini.png" id="prize5" alt="图片无法显示" />
                         </div>
                         <div class="col-xs-4 text-center wx-clear-padding">
-                            <img src="/images/IPhone-7Plus.png" alt="图片无法显示" />
+                            <img src="/images/IPhone-7Plus.png" id="prize4" alt="图片无法显示" />
                         </div>
                     </div>
                 </div>
@@ -120,6 +120,7 @@
                 </div>
             </div>
 
+            <fail-dialog></fail-dialog>
             <my-dialog :message="dialogMsg"></my-dialog>
         </div>
 
