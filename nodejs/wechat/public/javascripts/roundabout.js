@@ -2,7 +2,7 @@
     var vm = new Vue({
         el: "#wxRoundabout",
         data: {
-            freeNum: 8,
+            freeNum: 3,
             prizeList: [
                 {phone: "187****6661", prizeName:"四件套床品套件"},
                 {phone: "187****6662", prizeName:"小米智能手环"},
