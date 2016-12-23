@@ -32,10 +32,30 @@
             maxSpeed: 20,
             minSpeed: 200,
             addSpeed: -5,
-            winNum: 0
+            winNum: 0,
+            lotterying: false,
+            prizeInfo: [{
+                name: "100积分", ifWin: true
+            },{
+                name: "500代金券", ifWin: true
+            },{
+                name: "吊篮藤椅", ifWin: true
+            },{
+                name: "四件套床品套件", ifWin: true
+            },{
+                name: "iphone7plus", ifWin: true
+            },{
+                name: "ipadmini", ifWin: true
+            }, {
+                name: "谢谢参与", ifWin: false
+            }, {
+                name: "小米智能手环", ifWin: true
+            }],
+            winMessage: "iphone"
         },
         mounted: function(){
             this.initPrizeRollList();
+            // this.showDialog("wx-roundabout-win");
         },
         methods: {
             initPrizeRollList: function(){
@@ -81,6 +101,10 @@
                 $("#secondRollList").css("top", this.secondTop+"px");
             },
             startLottery: function(){
+                if(this.lotterying){
+                    return ;
+                }
+                this.lotterying = true;
                 if(this.freeNum > 0){
                     this.winNum = Math.floor(Math.random()*8);
                     console.log(this.winNum);
@@ -117,13 +141,16 @@
                         }
                         setTimeout(this.turntableRun, this.currentSpeed);
                     }else {
-                        //
-
+                        this.lotterying = false;
+                        var pi = this.prizeInfo[this.currentPrizeImgNum];
+                        if(pi.ifWin){
+                            this.winMessage = pi.name;
+                            this.showDialog("wx-roundabout-win");
+                        }else {
+                            this.showDialog("wx-roundabout-noWin");
+                        }
                     }
                 }
-            },
-            win: function(){
-                
             },
             winFlash: function(obj){
                 if(obj.hasClass("wx-roundabout-click-img")){
@@ -141,6 +168,14 @@
                 $("#prize5").removeClass("wx-roundabout-click-img");
                 $("#prize6").removeClass("wx-roundabout-click-img");
                 $("#prize7").removeClass("wx-roundabout-click-img");
+            },
+            showDialog: function(className){
+                $("."+className).css("display", "block");
+                var e = "."+className+">div:nth-child(2)";
+                var winHeight = window.innerHeight;
+                var divHeight = $(e).height();
+                var h = (winHeight-divHeight)/2;
+                $(e).css("top", h+"px");
             }
         },
         components: {
@@ -162,6 +197,31 @@
                 methods: {
                     closeDialog: function(){
                         $(".wx-roundabout-noWin").css("display", "none");
+                    }
+                }
+            },
+            "win-dialog": {
+                props: ['message'],
+                template: '<div class="wx-roundabout-win">'+
+                    '<div class="wx-roundabout-win-mask"></div>'+
+                    '<div class="row wx-clear-margin wx-roundabout-win-content">'+
+                        '<div class="col-xs-12 text-center wx-clear-padding">'+
+                            '<img src="/images/zjmmj.png" alt="图片无法显示" />'+
+                        '</div>'+
+                        '<div class="col-xs-12 text-center wx-clear-padding">'+
+                            '恭喜你抽中了<span>{{ message }}<span>'+
+                        '</div>'+
+                        '<div class="col-xs-12 text-center wx-clear-padding">'+
+                            '请及时在“我的礼品”领取'+
+                        '</div>'+
+                        '<div class="col-xs-12 text-center wx-clear-padding" v-on:click="closeDialog">'+
+                            '我知道了'+
+                        '</div>'+
+                    '</div>'+
+                '</div>',
+                methods: {
+                    closeDialog: function(){
+                        $(".wx-roundabout-win").css("display", "none");
                     }
                 }
             }
