@@ -121,6 +121,8 @@
             </div>
 
             <fail-dialog></fail-dialog>
+            <!-- message对应props内的值，不是固定的 -->
+            <win-dialog :message="winMessage"></win-dialog>
             <my-dialog :message="dialogMsg"></my-dialog>
         </div>
 
