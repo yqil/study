@@ -1,0 +1,254 @@
+body{
+    background-color: #CC1028;
+}
+
+.wx-roundabout-top{
+    position: relative;
+    width: 100%;
+}
+
+.wx-roundabout-top img{
+    width: 100%;
+}
+
+.wx-roundabout-top span{
+    display: inline-block;
+    width: 60%;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    margin: 0 auto;
+    background-color: #FFE65A;
+    color: #FE3A14;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+}
+
+.wx-roundabout-turntable{
+    margin: 0 12px 0 12px;
+    clear: both;
+    position: relative;
+}
+
+.wx-roundabout-turntable-border>img{
+    width: 100%;
+     margin-top: -2px;
+}
+
+.wx-roundabout-turntable-prizePic{
+    position: absolute;
+    top: 3.8%;
+    left: 4%;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.wx-roundabout-prizePic img{
+    width: 100%;
+}
+
+.wx-roundabout-roll{
+    margin: 0 12px 0 12px;
+    margin-top: 10px;
+    height: 164px;
+}
+
+.wx-roundabout-roll-top{
+    height: 44px;
+    line-height: 44px;
+    color: #ffffff;
+    font-size: 22px;
+    background-color: #800817;
+}
+
+.wx-roundabout-rollList{
+    background-color: #AA4750;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.wx-roundabout-roll-content{
+    position: relative;
+    overflow: hidden;
+    height: 120px;
+}
+
+.wx-roundabout-rollList-row{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.wx-roundabout-rollList-row>li{
+    height: 30px;
+    line-height: 30px;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    padding: 0 2px 0 2px;
+}
+
+.wx-roundabout-rule{
+    margin: 0 12px 0 12px;
+    margin-top: 10px;
+}
+
+.wx-roundabout-rule-top{
+    height: 44px;
+    line-height: 44px;
+    color: #ffffff;
+    font-size: 22px;
+    background-color: #FE7317;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.wx-roundabout-rule-content{
+    line-height: 30px;
+    font-size: 14px;
+    background-color: #FFF5DA;
+    padding-left: 12px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.wx-roundabout-bottom{
+    margin-top: 5px;
+}
+
+.wx-roundabout-bottom img{
+    width: 100%;
+}
+
+#firstRollList{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#secondRollList{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wx-roundabout-click-img{
+    border: 2px solid red;
+    opacity: 0.4;
+    background-color: blue;
+}
+
+.wx-roundabout-noWin{
+    display: none;
+}
+
+.wx-roundabout-noWin-mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.wx-roundabout-noWin-content{
+    width: 80%;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    background-color: #D6D6D6;
+    font-size: 14px;
+    z-index: 8888;
+}
+
+.wx-roundabout-noWin-content{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wx-roundabout-noWin-content img{
+    height: 88px;
+    margin-top: 12px;
+}
+
+.wx-roundabout-noWin-content>div:nth-child(2){
+    height: 30px;
+    line-height: 30px;
+}
+
+.wx-roundabout-noWin-content>div:nth-child(3){
+    height: 44px;
+    line-height: 44px;
+    background-color: #ffffff;
+    font-size: 20px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.wx-roundabout-win{
+    display: none;
+}
+
+.wx-roundabout-win-mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.wx-roundabout-win-content{
+    width: 80%;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    background-color: #FEE330;
+    font-size: 14px;
+    z-index: 8888;
+}
+
+.wx-roundabout-win-content{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wx-roundabout-win-content img{
+    width: 100%;
+    margin-top: 12px;
+}
+
+.wx-roundabout-win-content>div:nth-child(2){
+    height: 24px;
+    line-height: 24px;
+}
+
+.wx-roundabout-win-content>div:nth-child(2)>span{
+    color: red;
+}
+
+.wx-roundabout-win-content>div:nth-child(3){
+    height: 24px;
+    line-height: 24px;
+    padding-bottom: 5px;
+}
+
+.wx-roundabout-win-content>div:nth-child(4){
+    height: 44px;
+    line-height: 44px;
+    background-color: #ffffff;
+    font-size: 20px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
