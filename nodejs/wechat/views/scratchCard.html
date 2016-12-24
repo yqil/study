@@ -21,7 +21,19 @@
 
     <body>
         <div id="wxScratchCard">
-            
+            <div class="row wx-clear-margin wx-scratchCard-top">
+                <div class="col-xs-12 text-center wx-clear-padding wx-scratchCard-prizeInfo">
+                    <span>您还有{{ freeNum }}次免费抽奖机会</span>
+                    <p id="prizeName">{{ prizeName }}</p>
+                    <canvas id="scratchLayer">您的浏览器不支持 HTML5 canvas 标签。</canvas>
+                </div>
+                
+            </div>
+            <div class="row wx-clear-margin wx-scratchCard-bottom">
+                <div class="col-xs-12 text-center wx-clear-padding">
+                    <img src="/images/ggl-bottom.png" alt="图片无法显示" />
+                </div>
+            </div>
 
             <my-dialog :message="dialogMsg"></my-dialog>
         </div>
