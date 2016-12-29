@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" />
+        <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+        <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+        <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+        <title>用户中心</title>
+    </head>
+
+    <body>
+        
+        
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $.ajax({
+                    url: "/e/listUser.do",
+                    // data : data,
+                    type: "get",
+                    async: true,
+                    success: function(res){
+                        debugger;
+                    },
+                    timeout: 65000,
+                    beforeSend: function(){
+
+                    },
+                    dataType: "json",
+                    complete: function(XMLHttpRequest,status){ 
+                　　　　
+                    },
+                    error:function(XMLHttpRequest,status){
+                        if(XMLHttpRequest.status == '504'){
+                　　　　　  ext.my_prompt.showCustomInfo(null, "请求超时，请在更好的环境下重新尝试！");
+                            ext.my_prompt.close();
+                　　　　}
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>
