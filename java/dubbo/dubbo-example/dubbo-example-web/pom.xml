@@ -86,9 +86,10 @@
 				<version>${jetty.version}</version>
 				<configuration>
 					<contextPath>/</contextPath>
+					<scanIntervalSeconds>2</scanIntervalSeconds><!-- 每2秒的间隔扫描一次,实现热部署 --> 
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-							<port>9025</port>
+							<port>9035</port>
 						</connector>
 					</connectors>
 					<systemProperties>

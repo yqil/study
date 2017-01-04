@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
 
-	<display-name>study-example-web</display-name>
+	<display-name>dubbo-example-web</display-name>
 	<context-param>
 		<param-name>webAppRootKey</param-name>
 		<param-value>>web</param-value>
@@ -31,7 +31,7 @@
   	
   	<!-- servlet-mapping -->
   	<servlet>
-		 <servlet-name>study-example-web</servlet-name>
+		 <servlet-name>dubbo-example-web</servlet-name>
 		 <servlet-class>
 		 	 org.springframework.web.servlet.DispatcherServlet
 		 </servlet-class>
@@ -49,7 +49,7 @@
 	</servlet>
 	
 	<servlet-mapping>
-		 <servlet-name>study-example-web</servlet-name>
+		 <servlet-name>dubbo-example-web</servlet-name>
 		 <url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
