@@ -9,7 +9,8 @@ public class TestServiceImpl implements TestService {
 
 	@Override
 	public String test(String s) {
-		return null;
+		
+		return "测试方法返回值";
 	}
 
 }
