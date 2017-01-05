@@ -49,7 +49,7 @@
 	<import resource="mybatis-conf.xml" />
 	<import resource="dubbo-conf.xml" />
 
-	事务配置
+	<!-- 事务配置 -->
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="invMybatisDataSource" />
