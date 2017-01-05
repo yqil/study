@@ -45,6 +45,9 @@
 		</property>
 	</bean>
 
+	<!-- spring自动扫描路径，建议放最下面 -->
+	<context:component-scan base-package="com.mine.dubbo" />
+
 	<!-- 引入mybatis文件 -->
 	<import resource="mybatis-conf.xml" />
 	<import resource="dubbo-conf.xml" />
@@ -57,6 +60,5 @@
 	<!-- 事务配置开启注解支持 -->
 	<tx:annotation-driven transaction-manager="txManager" />
 
-	<!-- spring自动扫描路径，建议放最下面 -->
-	<context:component-scan base-package="com.mine.dubbo" />
+	
 </beans>
