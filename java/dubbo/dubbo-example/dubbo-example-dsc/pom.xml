@@ -33,8 +33,8 @@
 				<jdbc.maxWait>3000</jdbc.maxWait>
 				<config.url>www.baidu.com</config.url>
 				<zookeeper.server>192.168.198.128:2181?backup=192.168.198.131:2181</zookeeper.server>
-				<!-- <dubbo.host>127.0.0.1</dubbo.host>
-				<dubbo.port>28042</dubbo.port> -->
+				<!-- <dubbo.host>127.0.0.1</dubbo.host> -->
+				<dubbo.port>28042</dubbo.port>
 			</properties>
 			<!-- 指定默认启动配置 -->
 			<activation>
