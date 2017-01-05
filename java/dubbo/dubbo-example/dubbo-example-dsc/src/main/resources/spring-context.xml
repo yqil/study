@@ -49,16 +49,16 @@
 	<context:component-scan base-package="com.mine.dubbo" />
 
 	<!-- 引入mybatis文件 -->
-	<import resource="mybatis-conf.xml" />
+	<!-- <import resource="mybatis-conf.xml" /> -->
 	<import resource="dubbo-conf.xml" />
 
 	<!-- 事务配置 -->
-	<bean id="txManager"
+	<!-- <bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="invMybatisDataSource" />
-	</bean>
+	</bean> -->
 	<!-- 事务配置开启注解支持 -->
-	<tx:annotation-driven transaction-manager="txManager" />
+	<!-- <tx:annotation-driven transaction-manager="txManager" /> -->
 
 	
 </beans>
