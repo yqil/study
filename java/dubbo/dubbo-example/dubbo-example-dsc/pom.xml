@@ -24,7 +24,7 @@
 			<!-- 本地环境 -->
 			<id>development</id>
 			<properties>
-				<jdbc.url>192.168.198.128:3306/study_dev</jdbc.url>
+				<jdbc.url>192.168.198.135:3306/study_dev</jdbc.url>
 				<jdbc.user>yql</jdbc.user>
 				<jdbc.passwd>yql</jdbc.passwd>
 				<jdbc.initialSize>1</jdbc.initialSize>
@@ -34,7 +34,7 @@
 				<config.url>www.baidu.com</config.url>
 				<!-- <zookeeper.server>192.168.198.131:2181</zookeeper.server> -->
 				<!-- <zookeeper.server>192.168.198.131:2181?backup=192.168.198.128:2181</zookeeper.server> -->
-				<zookeeper.server>192.168.198.128:2181?backup=192.168.198.131:2181</zookeeper.server>
+				<zookeeper.server>192.168.198.135:2181?backup=192.168.198.131:2181</zookeeper.server>
 				<dubbo.host></dubbo.host>
 				<dubbo.port>28042</dubbo.port>
 			</properties>
