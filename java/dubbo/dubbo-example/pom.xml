@@ -9,7 +9,7 @@
   <properties>
 		<project.version>1.0.0-SNAPSHOT</project.version>
 		<springVersion>3.2.2.RELEASE</springVersion>
-		<slf4j.version>1.6.2</slf4j.version>
+		<slf4j.version>1.6.5</slf4j.version>
 		<logback.version>1.0.6</logback.version>
 		<quartz.version>1.8.4</quartz.version>
 		<org.codehaus.jackson.version>1.8.5</org.codehaus.jackson.version>
