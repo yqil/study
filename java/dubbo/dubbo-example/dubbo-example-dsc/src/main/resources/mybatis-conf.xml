@@ -62,7 +62,7 @@
 	</bean>
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.mine.dubbo.biz.dao.autocode" />
+		<property name="basePackage" value="com.mine.dubbo.example.biz.dao.autocode" />
 		<property name="sqlSessionFactoryBeanName" value="initSqlSessionFactory" />
 	</bean>
 
