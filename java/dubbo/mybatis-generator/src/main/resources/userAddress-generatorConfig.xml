@@ -13,24 +13,24 @@
 		<plugin type="com.mine.example.auto.MySqlPlugin" />  
 		
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1:3306/study" userId="yql" password="yql">
+			connectionURL="jdbc:mysql://192.168.198.135:3306/study_dev" userId="yql" password="yql">
 		</jdbcConnection>
 
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
-		<javaModelGenerator targetPackage="com.mine.study.common.model.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-common\src\main\java">
+		<javaModelGenerator targetPackage="com.mine.dubbo.example.common.model.autocode" targetProject="D:\mine\github\study\java\dubbo\dubbo-example\dubbo-example-common\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="mybatis.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-api\src\main\resources">
+		<sqlMapGenerator targetPackage="mybatis.autocode" targetProject="D:\mine\github\study\java\dubbo\dubbo-example\dubbo-example-biz\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.mine.study.api.dao.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-api\src\main\java">
+			targetPackage="com.mine.dubbo.example.biz.dao.autocode" targetProject="D:\mine\github\study\java\dubbo\dubbo-example\dubbo-example-biz\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 

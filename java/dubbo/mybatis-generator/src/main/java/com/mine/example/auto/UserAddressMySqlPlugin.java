@@ -21,7 +21,7 @@ public class UserAddressMySqlPlugin {
  
 	public static void main(String[] args) throws IOException, XMLParserException {
 		
-        String configfile = "D:/mine/github/study/java/mybatis-generator/src/main/resources/userAddress-generatorConfig.xml";
+        String configfile = "D:/mine/github/study/java/dubbo/mybatis-generator/src/main/resources/userAddress-generatorConfig.xml";
         File configurationFile = new File(configfile);
         
         List<String> warnings = new ArrayList<String>();
