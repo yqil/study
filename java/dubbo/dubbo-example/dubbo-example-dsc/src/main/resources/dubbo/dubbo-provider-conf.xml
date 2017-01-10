@@ -11,8 +11,8 @@
 
 	<dubbo:service interface="com.mine.dubbo.example.common.service.TestService" ref="testService" delay="-1" />
 
-	<dubbo:service interface="com.mine.dubbo.example.common.service.UserService" ref="userService" delay="-1" />
+	<!-- <dubbo:service interface="com.mine.dubbo.example.common.service.UserService" ref="userService" delay="-1" />
 	<dubbo:service interface="com.mine.dubbo.example.common.service.AddrService" ref="addrService" delay="-1" />
 	<dubbo:service interface="com.mine.dubbo.example.common.service.AccountService" ref="accountService" delay="-1" />
-	
+	 -->
 </beans>

@@ -11,8 +11,8 @@
 
 	<dubbo:reference interface="com.mine.dubbo.example.common.service.TestService" id="testService" check="false" timeout="3000"/>
 	
-	<dubbo:service interface="com.mine.dubbo.example.common.service.UserService" id="userService" check="false" timeout="3000" />
-	<dubbo:service interface="com.mine.dubbo.example.common.service.AddrService" id="addrService" check="false" timeout="3000" />
-	<dubbo:service interface="com.mine.dubbo.example.common.service.AccountService" id="accountService" check="false" timeout="3000" />
+	<dubbo:reference interface="com.mine.dubbo.example.common.service.UserService" id="userService" check="false" timeout="3000" />
+	<dubbo:reference interface="com.mine.dubbo.example.common.service.AddrService" id="addrService" check="false" timeout="3000" />
+	<dubbo:reference interface="com.mine.dubbo.example.common.service.AccountService" id="accountService" check="false" timeout="3000" />
 	
 </beans>
