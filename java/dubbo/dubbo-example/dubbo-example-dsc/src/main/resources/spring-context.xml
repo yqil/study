@@ -46,7 +46,7 @@
 	</bean>
 
 	<!-- 引入mybatis文件 -->
-	<import resource="mybatis-conf1.xml" />
+	<import resource="mybatis-conf.xml" />
 	<import resource="dubbo-conf.xml" />
 
 	<!-- 事务配置 -->
