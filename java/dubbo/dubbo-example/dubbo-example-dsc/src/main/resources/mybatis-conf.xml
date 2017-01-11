@@ -55,7 +55,7 @@
 		<property name="dataSource" ref="invMybatisDataSource" />
 		<property name="mapperLocations">
             <list>
-              	<value>classpath:mybatis/*.xml</value>
+              	<!-- <value>classpath:mybatis/*.xml</value> -->
               	<value>classpath:mybatis/autocode/*.xml</value>
             </list>
         </property>
