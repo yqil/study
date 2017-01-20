@@ -1,0 +1,2 @@
+该工程为mybatis自动代码生成maven工程
+

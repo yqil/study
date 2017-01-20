@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	
+	<context id="user" targetRuntime="MyBatis3">
+		<property name="mergeable" value="false"></property>
+		<!-- 生成的bean自动加上序列化 -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- 查询语句加上分页功能 -->
+		<plugin type="com.mine.example.auto.MySqlPlugin" />  
+		
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/study" userId="yql" password="yql">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.mine.study.common.model.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-common\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="mybatis.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-api\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.mine.study.api.dao.autocode" targetProject="D:\mine\github\study\java\study-example\study-example-api\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+ 		<table schema="auto" tableName="t_user">
+ 			<!-- 类中生成驼峰命名方式的属性，为true时，类中属性名称风格与数据库保持一致 -->
+			<property name="useActualColumnNames" value="false" />
+		</table> 
+	</context>
+</generatorConfiguration>
