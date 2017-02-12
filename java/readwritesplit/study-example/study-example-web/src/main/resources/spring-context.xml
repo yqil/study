@@ -22,6 +22,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:conf/config.properties</value>
+				<!-- <value>classpath:conf/swagger.properties</value> -->
 			</list>
 		</property>
 	</bean>
@@ -50,6 +51,7 @@
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/" p:suffix=".html" />
 	<!-- 控制层返回页面统一配置结束 -->
+	
 
 	<!-- 引入mybatis文件 -->
 	<import resource="mybatis-conf.xml" />
