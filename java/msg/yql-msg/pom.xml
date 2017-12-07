@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>yql.msg</groupId>
+	<artifactId>yql-msg</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<description>消息系统模块</description>
+	
+	<properties>
+		<project.version>1.0.0-SNAPSHOT</project.version>
+		<springVersion>4.3.9.RELEASE</springVersion>
+		<jetty.version>7.6.10.v20130312</jetty.version>
+		<slf4j.version>1.6.2</slf4j.version>
+		<logback.version>1.1.7</logback.version>
+	</properties>
+
+	<!-- 配置私服仓库 -->
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>Team Nexus Repository</name>
+			<url>http://10.10.14.186:8181/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus</id>
+			<name>Team Nexus Repository</name>
+			<url>http://10.10.14.186:8181/nexus/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<modules>
+		<module>yql-msg-common</module>
+		<module>yql-msg-biz</module>
+		<module>yql-msg-auto</module>
+		<module>yql-msg-web</module>
+		<module>yql-msg-job</module>
+		<module>yql-msg-test</module>
+	</modules>
+</project>

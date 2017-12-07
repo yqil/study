@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="tmsg" targetRuntime="MyBatis3">
+		<!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<!-- 格式化java代码 -->
+		<property name="javaFormatter"
+			value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+		<!-- 格式化XML代码 -->
+		<property name="xmlFormatter"
+			value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+		<!-- <property name="mergeable" value="false" /> -->
+		<!-- 生成的bean自动加上序列化 -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- 查询语句加上分页功能 -->
+		<plugin type="yql.msg.auto.util.MySqlPaginationPlugin" />
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+
+		<!-- 生成的bean会根据字段的注释生成java注释 -->
+		<commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <property name="addRemarkComments" value="true"/>
+            <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+        </commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.127.129:3306/mock" userId="root" password="root">
+		</jdbcConnection>
+		
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="yql.msg.common.model.auto.tmsg"
+			targetProject="D:/mine/github/study/java/msg/yql-msg/yql-msg-common/src/main/java">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="auto"
+			targetProject="D:/mine/github/study/java/msg/yql-msg/yql-msg-biz/src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="yql.msg.biz.dao.auto.tmsg"
+			targetProject="D:/mine/github/study/java/msg/yql-msg/yql-msg-biz/src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<table schema="lsmy" tableName="t_msg" alias="t">
+			<!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； -->
+			<property name="ignoreQualifiersAtRuntime" value="true"/>
+			<!-- 类中生成驼峰命名方式的属性，为true时，类中属性名称风格与数据库保持一致 -->
+			<property name="useActualColumnNames" value="false" />
+			
+			<columnOverride column="msg_content" javaType="String"/>
+			<columnOverride column="send_num" javaType="Short"/>
+			<columnOverride column="reset_num" javaType="Short"/>
+			<columnOverride column="status" javaType="Short"/>
+		</table>
+	</context>
+</generatorConfiguration>
