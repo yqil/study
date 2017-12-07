@@ -1,0 +1,81 @@
+spring事务知识点：
+1:不同方法间事务回滚，如下：
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void test(){
+		//修改A表操作
+		editATable();
+		//修改B表操作
+		test2();
+	}
+	public void test2(){
+		//修改B表操作
+		editBTable();
+	}
+	//如果test2方法出了异常，是否会回滚对A表的修改操作，答案：会
+2:中途服务器挂了，是否会回滚，如一种调用或执行test2方法过程中，服务器挂掉了，是否会回滚
+	对A表的修改操作，答案：会
+	
+什么时候异常会出现回滚？
+1： @Transactional(propagation=Propagation.REQUIRED)
+	public void test() throws Exception{
+		try{
+			//修改A表操作
+			editATable();
+			//修改B表操作
+			test2();
+		}catch(Exception e){
+			throw new Exception("测试");
+		}
+		
+	}
+	public void test2(){
+		//修改B表操作
+		editBTable();
+	}
+	//如果test2方法出了异常，是否会回滚对A表的修改操作，答案：不会
+2: 	@Transactional(propagation=Propagation.REQUIRED)
+	public void test() throws BusinessException{
+		try{
+			//修改A表操作
+			editATable();
+			//修改B表操作
+			test2();
+		}catch(Exception e){
+			throw new BusinessException("测试");
+		}
+		
+	}
+	public void test2(){
+		//修改B表操作
+		editBTable();
+	}
+	
+	public class BusinessException extends Exception{}
+	//如果test2方法出了异常，是否会回滚对A表的修改操作，答案：不会
+3: 	@Transactional(propagation=Propagation.REQUIRED)
+	public void test() throws BusinessException{
+		try{
+			//修改A表操作
+			editATable();
+			//修改B表操作
+			test2();
+		}catch(Exception e){
+			throw new BusinessException("测试");
+		}
+		
+	}
+	public void test2(){
+		//修改B表操作
+		editBTable();
+	}
+	
+	public class BusinessException extends RuntimeException{}
+	//如果test2方法出了异常，是否会回滚对A表的修改操作，答案：会
+
+4：当方法抛出RuntimeException或Error时（当然包含他们的子类），spring配置的事务方法会进行
+	事务回滚操作，否则不会（未指定rollBackFor情况）。这里就要注意自定义的异常一定要继承RuntimeException，而不是Exception。
+	rollBackFor详见文章：http://blog.csdn.net/lu930124/article/details/77596045
+5：这里有必要了解下异常的分类，这样更能了解spring事务这块的异常处理了。文章见：
+	http://blog.csdn.net/hguisu/article/details/6155636
+	
+	
