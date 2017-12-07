@@ -1,0 +1,217 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.yql.test</groupId>
+		<artifactId>yql-test</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.yql.test.web</groupId>
+	<artifactId>yql-test-web</artifactId>
+	<version>${project.version}</version>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.yql.test.biz</groupId>
+			<artifactId>yql-test-biz</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<!-- 单元测试jar start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${springVersion}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.mockito</groupId> <artifactId>mockito-all</artifactId> 
+			<version>1.10.19</version> <scope>test</scope> </dependency> -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- 单元测试jar end -->
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<!-- 本地开发环境 -->
+			<id>dev</id>
+			<properties>
+				<db.jdbcurl>jdbc:mysql://192.168.127.129:3306/mock</db.jdbcurl>
+				<db.user>root</db.user>
+				<db.password>root</db.password>
+				<jdbc.initialSize>5</jdbc.initialSize>
+				<jdbc.minIdle>5</jdbc.minIdle>
+				<jdbc.maxActive>50</jdbc.maxActive>
+				<jdbc.maxWait>1000</jdbc.maxWait>
+				<log.level>DEBUG</log.level>
+				<log.home>c:/temp/logs/yql-test-web</log.home>
+			</properties>
+			<!-- 指定默认启动配置 -->
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<!-- test环境 -->
+			<id>test</id>
+			<properties>
+				<db.jdbcurl>jdbc:mysql://192.168.127.129:3306/mock</db.jdbcurl>
+				<db.user>root</db.user>
+				<db.password>root</db.password>
+				<jdbc.initialSize>5</jdbc.initialSize>
+				<jdbc.minIdle>5</jdbc.minIdle>
+				<jdbc.maxActive>50</jdbc.maxActive>
+				<jdbc.maxWait>1000</jdbc.maxWait>
+				<log.level>DEBUG</log.level>
+				<log.home>/data/logs/test/yql-test-web</log.home>
+			</properties>
+		</profile>
+
+		<profile>
+			<!-- uat环境 -->
+			<id>uat</id>
+			<properties>
+				<db.jdbcurl>jdbc:mysql://192.168.127.129.100:3306/mock</db.jdbcurl>
+				<db.user>root</db.user>
+				<db.password>root</db.password>
+				<jdbc.initialSize>5</jdbc.initialSize>
+				<jdbc.minIdle>5</jdbc.minIdle>
+				<jdbc.maxActive>50</jdbc.maxActive>
+				<jdbc.maxWait>1000</jdbc.maxWait>
+				<log.level>DEBUG</log.level>
+				<log.home>/data/logs/uat/yql-test-web</log.home>
+			</properties>
+		</profile>
+
+		<profile>
+			<!-- 正式环境 -->
+			<id>online</id>
+			<properties>
+				<db.jdbcurl>jdbc:mysql://192.168.127.129:3306/mock</db.jdbcurl>
+				<db.user>root</db.user>
+				<db.password>root</db.password>
+				<jdbc.initialSize>5</jdbc.initialSize>
+				<jdbc.minIdle>5</jdbc.minIdle>
+				<jdbc.maxActive>50</jdbc.maxActive>
+				<jdbc.maxWait>1000</jdbc.maxWait>
+				<log.level>INFO</log.level>
+				<log.home>/root/oa/logs/yql-test-web</log.home>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<!-- 编译打包的文件名，默认artifactId加时间戳 -->
+		<finalName>yql-test-web</finalName>
+
+		<plugins>
+			<!-- 指定编译时候jdk版本号和编码 -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.2</version>
+				<configuration>
+					<encoding>utf-8</encoding>
+					<source>1.7</source>
+					<target>1.7</target>
+					<meminitial>128m</meminitial>
+					<maxmem>512m</maxmem>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.15.v20140411</version>
+				<configuration>
+					<contextPath>/</contextPath>
+					<scanIntervalSeconds>2</scanIntervalSeconds><!-- 每2秒的间隔扫描一次,实现热部署 -->
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>8888</port>
+						</connector>
+					</connectors>
+					<systemProperties>
+						<systemProperty>
+							<name>MAVEN_OPTS</name>
+							<value>"-Xms512m -Xmx1024m -XX:MaxPermSize=384m"</value>
+						</systemProperty>
+						<systemProperty>
+							<name>JVM-ARG</name>
+							<value>"-XX:MaxPermSize=386m"</value>
+						</systemProperty>
+						<systemProperty>
+							<name>JAVA_OPTS</name>
+							<value>"-Xms512m -Xmx1024m"</value>
+						</systemProperty>
+					</systemProperties>
+					<webDefaultXml>src/main/resources/webdefault.xml</webDefaultXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<additionalProjectnatures>
+						<projectnature>
+							org.springframework.ide.eclipse.core.springnature
+						</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>
+							org.springframework.ide.eclipse.core.springbuilder
+						</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>1.5</wtpversion>
+				</configuration>
+			</plugin>
+			<!-- 指定字符集 -->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- 单元测试插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20.1</version>
+				<configuration>
+					<!-- <skip>true</skip> -->
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
