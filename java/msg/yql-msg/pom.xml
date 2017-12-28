@@ -38,5 +38,6 @@
 		<module>yql-msg-web</module>
 		<module>yql-msg-job</module>
 		<module>yql-msg-test</module>
+		<module>yql-msg-temp</module>
 	</modules>
 </project>
