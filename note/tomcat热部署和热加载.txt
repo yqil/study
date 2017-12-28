@@ -1,0 +1,12 @@
+tomcat热部署和热加载
+热部署：就是容器状态在运行的情况下重新部署整个项目.在这种情况下一般整个内存会清空,重新加载.简单来说就是Tomcat或者其他的web服务器会帮我们重新加载项目.这种方式可能会造成sessin丢失等情况.
+热加载（热启动）：网上帖子的说法："就是容器状态在运行的情况下重新加载改变编译后的类.在这种情况下内存不会清空,sessin不会丢失,但容易造成内存溢出,或者找不到方法。因为内存无法转变成对像. 一般改变类的结构和模型就会有异常，在已经有的变量和方法中改变是不会出问题的"
+		经过自己测试发现无论是修改类、还是新增或删除类都不会出问题
+
+热部署配置如下（修改tomcat的server.xml文件）：
+<Context docBase="lsmy-oa-web" path="/" reloadable="true" crossContext="true" source="org.eclipse.jst.jee.server:dreamlive"/>
+这样每次更改class文件都会自动的去编译，比较耗时
+
+热加载如下（修改tomcat的server.xml文件）：
+<Context docBase="lsmy-oa-web" path="/" reloadable="false" crossContext="true" source="org.eclipse.jst.jee.server:dreamlive"/>
+这样每次更改class文件，tomcat不会重启，tomcat会重新加载改变编译后的类，新增或删除类也不需要重启。
