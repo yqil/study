@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>yql.spring.boot</groupId>
+		<artifactId>yql-spring-boot</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>yql.spring.boot.web</groupId>
+	<artifactId>yql-spring-boot-web</artifactId>
+	<version>${project.version}</version>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>yql.spring.boot.biz</groupId>
+			<artifactId>yql-spring-boot-biz</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<!-- 为jar包取名 -->
+		<finalName>yql-spring-boot-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+				<!-- 指定该Main Class为全局的唯一入口 -->
+					<mainClass>yql.spring.boot.web.Application</mainClass>
+					<layout>JAR</layout>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中 -->
+						</goals>
+						<!--可以生成不含依赖包的不可执行Jar包 -->
+						<!-- configuration> <classifier>exec</classifier> </configuration> -->
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
